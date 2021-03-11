@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "441763851899",
+    "project_id": "iesb-rpg-pi-2-2021",
+    "storage_bucket": "iesb-rpg-pi-2-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441763851899:android:0f2f9a458b1f0070b43cde",
+        "android_client_info": {
+          "package_name": "br.iesb.mobile.rpg_pi2_20211"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441763851899-39sftjpeaoh27m52j0kkrt70eirrgq6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjXic4q1hOlQJPvfqoYdzuX5Ti5lTxIn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441763851899-39sftjpeaoh27m52j0kkrt70eirrgq6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
