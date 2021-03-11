@@ -35,5 +35,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btCad.setOnClickListener {
+            //val redirecionar = Intent(this, CadastrarActivity::class.java)
+            //startActivity(redirecionar)
+        }
+
+        tvEsqueci.setOnClickListener {
+            //val redirecionar = Intent(this, EsqueciActivity::class.java)
+            //startActivity(redirecionar)
+        }
     }
 }
