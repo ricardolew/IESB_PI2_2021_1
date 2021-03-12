@@ -6,4 +6,9 @@
     <string name="botao_entrar">Entrar</string>
     <string name="botao_cad">Cadastrar</string>
 
+    <string name="hint_cadastro_email">Digite o email</string>
+    <string name="hint_cadastro_senha">Digite a senha</string>
+    <string name="hint_cadastro_senha_confirma">Confirme a senha</string>
+    <string name="botao_cadastro_confirmar">Confirmar</string>
+
 </resources>

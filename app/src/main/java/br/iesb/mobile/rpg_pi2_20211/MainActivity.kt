@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btCad.setOnClickListener {
-            //val redirecionar = Intent(this, CadastrarActivity::class.java)
-            //startActivity(redirecionar)
+            /*val redirecionar = Intent(this, CadastroActivity::class.java)
+            startActivity(redirecionar)*/
         }
 
         tvEsqueci.setOnClickListener {
