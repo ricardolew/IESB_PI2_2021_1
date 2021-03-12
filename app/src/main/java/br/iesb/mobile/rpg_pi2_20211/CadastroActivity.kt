@@ -1,6 +1,6 @@
 package br.iesb.mobile.rpg_pi2_20211
 
-/*
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -39,14 +39,12 @@ class CadastroActivity : AppCompatActivity() {
 
                     if(resultado.isSuccessful){
 
-                        Log.d("CadastroSucesso", "Cadastro feito com sucesso")
+                        Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_LONG).show()
 
-                        val usuario = auth.currentUser
+                        finish()
 
                     }
                     else{
-
-                        Log.w("CadastroFalha", "Cadastro falhou", resultado.exception)
 
                         Toast.makeText(this, "Email já está sendo utilizado. Digite outro", Toast.LENGTH_LONG).show()
                     }
@@ -56,4 +54,4 @@ class CadastroActivity : AppCompatActivity() {
             }
         }
     }
-}*/
+}
