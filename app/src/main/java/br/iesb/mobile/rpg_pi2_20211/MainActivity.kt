@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Email ou senha inválidos", Toast.LENGTH_LONG).show()
                     }
 
+                    val redirecionar = Intent(this, HomeActivity::class.java)
+                    startActivity(redirecionar)
                 }
             }
         }
