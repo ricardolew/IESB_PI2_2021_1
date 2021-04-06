@@ -1,5 +1,6 @@
 package br.iesb.mobile.rpg_pi2_20211
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_home.*
@@ -10,7 +11,8 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         btPersonagem1.setOnClickListener {
-
+            val redirecionar = Intent(this, PersonagemActivity::class.java)
+            startActivity(redirecionar)
 
 
             //if (personagem.exists){
