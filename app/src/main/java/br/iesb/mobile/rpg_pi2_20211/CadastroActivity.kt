@@ -53,5 +53,10 @@ class CadastroActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btCadastroVolta.setOnClickListener {
+
+            finish()
+        }
     }
 }
