@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(redirecionar)
         }
 
-        tvEsqueci.setOnClickListener {
+        btEsqueci.setOnClickListener {
             val redirecionar = Intent(this, EsqueciActivity::class.java)
             startActivity(redirecionar)
         }
