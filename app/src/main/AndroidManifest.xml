@@ -12,6 +12,7 @@
         <activity android:name=".PersonagemActivity"></activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroActivity" />
+        <activity android:name=".EsqueciActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
