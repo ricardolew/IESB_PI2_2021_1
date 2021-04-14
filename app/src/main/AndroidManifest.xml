@@ -19,7 +19,6 @@
         </activity>
         <activity android:name=".ui.activity.antigos.PersonagemActivity" />
         <activity android:name=".ui.activity.antigos.HomeActivity" />
-        <activity android:name=".ui.activity.antigos.CadastroActivity" />
         <activity android:name=".ui.activity.antigos.EsqueciActivity" />
     </application>
 
