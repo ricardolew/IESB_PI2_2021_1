@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RPG_PI2_20211">
-        <activity android:name=".ui.activity.PersonagemActivity"></activity>
-        <activity android:name=".ui.activity.HomeActivity" />
-        <activity android:name=".ui.activity.CadastroActivity" />
-        <activity android:name=".ui.activity.EsqueciActivity" />
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.activity.AppActivity"></activity>
+        <activity android:name=".ui.activity.loginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.antigos.PersonagemActivity" />
+        <activity android:name=".ui.activity.antigos.HomeActivity" />
+        <activity android:name=".ui.activity.antigos.CadastroActivity" />
+        <activity android:name=".ui.activity.antigos.EsqueciActivity" />
     </application>
 
 </manifest>
