@@ -1,8 +1,9 @@
-package br.iesb.mobile.rpg_pi2_20211
+package br.iesb.mobile.rpg_pi2_20211.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import br.iesb.mobile.rpg_pi2_20211.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_esqueci.*

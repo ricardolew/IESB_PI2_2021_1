@@ -1,8 +1,9 @@
-package br.iesb.mobile.rpg_pi2_20211
+package br.iesb.mobile.rpg_pi2_20211.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.iesb.mobile.rpg_pi2_20211.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {

@@ -1,8 +1,8 @@
-package br.iesb.mobile.rpg_pi2_20211
+package br.iesb.mobile.rpg_pi2_20211.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_home.*
+import br.iesb.mobile.rpg_pi2_20211.R
 import kotlinx.android.synthetic.main.activity_personagem.*
 
 class PersonagemActivity : AppCompatActivity() {
