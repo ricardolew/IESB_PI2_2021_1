@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.iesb.mobile.rpg_pi2_20211">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RPG_PI2_20211">
-        <activity android:name=".ui.activity.AppActivity"></activity>
+<!--        <uses-library-->
+<!--            android:name="com.google.android.wearable"-->
+<!--            android:required="true" />-->
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+
+        <!-- <activity android:name=".ui.activity.AppActivity"></activity> -->
         <activity android:name=".ui.activity.loginActivity">
+
+        </activity>
+        <activity android:name=".ui.activity.AppActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.antigos.PersonagemActivity" />
-        <activity android:name=".ui.activity.antigos.HomeActivity" />
-        <activity android:name=".ui.activity.antigos.EsqueciActivity" />
     </application>
 
 </manifest>
