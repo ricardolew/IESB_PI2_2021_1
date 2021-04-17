@@ -19,5 +19,13 @@
         android:id="@+id/onboardingFragment4"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment4_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>
