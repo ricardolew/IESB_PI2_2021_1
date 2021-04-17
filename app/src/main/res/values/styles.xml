@@ -16,5 +16,18 @@
         <item name="android:textColor">#ffffff</item>
         <item name="android:textAppearance">@style/TitleApp</item>
     </style>
+    <style name="Widget.Nome" parent = "Widget.AppCompat.TextView">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textAppearance">@style/NomeApp</item>
+    </style>
+
+    <style name="Widget.ViewPageIndicator" parent="android:Widget">
+        <item name="dotsColor">?attr/colorSecondary</item>
+        <item name="dotsStrokeColor">?attr/colorSecondaryVariant</item>
+        <item name="dotsStrokeWidth">2dp</item>
+        <item name="dotsCornerRadius">8dp</item>
+        <item name="dotsSize">8dp</item>
+        <item name="dotsSpacing">4dp</item>
+    </style>
 
 </resources>

@@ -3,5 +3,9 @@
 
     <attr format="reference" name="primaryButtonStyle"/>
     <attr format="reference" name="titleStyle"/>
+    <attr format="reference" name="nomeStyle"/>
+    nomeStyle
+
+    <attr format="reference" name="viewPagerDotsStyle"/>
 
 </resources>

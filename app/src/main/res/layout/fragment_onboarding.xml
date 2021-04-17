@@ -29,24 +29,24 @@
 
         </androidx.viewpager2.widget.ViewPager2>
 
-<!--        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator-->
-<!--            android:id="@+id/wormDotsIndicator"-->
-<!--            style="?attr/viewPagerDotsStyle"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="32dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:layout_marginBottom="8dp"-->
-<!--            app:dotsColor="#FFFF0100"-->
-<!--            app:dotsCornerRadius="8dp"-->
-<!--            app:dotsSize="8dp"-->
-<!--            app:dotsSpacing="4dp"-->
-<!--            app:dotsStrokeColor="#870101"-->
-<!--            app:dotsStrokeWidth="2dp"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/btStart"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/WormDotsIndicator"
+            style="?attr/viewPagerDotsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            app:dotsColor="#dc9c0c"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="8dp"
+            app:dotsSpacing="4dp"
+            app:dotsStrokeColor="#94780c"
+            app:dotsStrokeWidth="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/btStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btStart"
