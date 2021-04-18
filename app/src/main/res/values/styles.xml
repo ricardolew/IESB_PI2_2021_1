@@ -30,7 +30,7 @@
     <style name="Widget.Nome" parent = "Widget.AppCompat.TextView">
         <item name="android:textColor">#c47414</item>
         <item name="android:textAppearance">@style/NomeApp</item>
-        <item name="android:letterSpacing">0.01</item>
+        <item name="android:letterSpacing">0.1</item>
 
     </style>
 
