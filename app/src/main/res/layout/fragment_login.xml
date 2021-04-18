@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
     tools:context=".ui.activity.antigos.MainActivity">
 
     <ImageView
@@ -24,8 +25,11 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
+        android:fontFamily="@font/lohengrin"
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
+        android:letterSpacing="0.4"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,8 +41,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:fontFamily="@font/lohengrin"
         android:hint="@string/hint_senha"
         android:inputType="textPassword"
+        android:letterSpacing="0.2"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
@@ -48,7 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Esqueci a senha"
+        android:fontFamily="@font/lohengrin"
+        android:letterSpacing="0.3"
+        android:text="Esqueci a palavra mágica"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,11 +67,13 @@
 
     <Button
         android:id="@+id/btEntrar"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/botao_entrar"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -70,11 +82,13 @@
 
     <Button
         android:id="@+id/btCad"
+        style="?secundaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/botao_cad"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvEsqueci"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

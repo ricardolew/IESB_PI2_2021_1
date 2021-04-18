@@ -2,7 +2,7 @@
     <string name="app_name">RPG_PI2_20211</string>
 
     <string name="hint_email">Email</string>
-    <string name="hint_senha">Senha</string>
+    <string name="hint_senha">Palavra mágica</string>
     <string name="botao_entrar">Entrar</string>
     <string name="botao_cad">Cadastrar</string>
 

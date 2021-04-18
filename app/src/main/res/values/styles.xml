@@ -12,13 +12,26 @@
         <item name="android:textAppearance">@style/Textbutton</item>
     </style>
 
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.SecundaryButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="backgroundTint">?attr/colorInicio</item>
+        <item name="strokeColor">?attr/colorInicio</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+        <item name="android:textAppearance">@style/Textbutton</item>
+    </style>
+
     <style name="Widget.Title" parent = "Widget.AppCompat.TextView">
         <item name="android:textColor">#ffffff</item>
         <item name="android:textAppearance">@style/TitleApp</item>
     </style>
     <style name="Widget.Nome" parent = "Widget.AppCompat.TextView">
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">#c47414</item>
         <item name="android:textAppearance">@style/NomeApp</item>
+        <item name="android:letterSpacing">0.01</item>
+
     </style>
 
     <style name="Widget.ViewPageIndicator" parent="android:Widget">
@@ -29,5 +42,8 @@
         <item name="dotsSize">8dp</item>
         <item name="dotsSpacing">4dp</item>
     </style>
+
+
+
 
 </resources>

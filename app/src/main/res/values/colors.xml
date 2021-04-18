@@ -13,6 +13,7 @@
 <!--    <color name="teal_200">#FF03DAC5</color>-->
 <!--    botão/ -->
     <color name="teal_200">#c47414</color>
+    <color name="amareloInicio">#e6962e</color>
 
 <!--    <color name="teal_700">#FF018786</color>-->
     <color name="teal_700">#a03c70</color>
@@ -23,5 +24,7 @@
 <!--    <color name="brand_dark_gray_2">#2D2F31</color>-->
 <!--    tela splash background / background emvolta botão e dots/ background aplicaçãogeral-->
     <color name="brand_dark_gray_2">#2D2F31</color>
+
+    <color name="cinzaPrimary">#262626</color>
 
 </resources>

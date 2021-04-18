@@ -4,9 +4,10 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/cinzaPrimary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorInicio">@color/amareloInicio</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
@@ -18,8 +19,11 @@
 <!--        <item name="backgroundColor">@color/brand_dark_gray_2</item>-->
 
         <item name="primaryButtonStyle">@style/Widget.MaterialComponents.Button.OutlinedButton.PrimaryButton</item>
+        <item name="secundaryButtonStyle">@style/Widget.MaterialComponents.Button.OutlinedButton.SecundaryButton</item>
         <item name="titleStyle"> @style/Widget.Title</item>
         <item name="nomeStyle"> @style/Widget.Nome</item>
+
+
 
         <item name="viewPagerDotsStyle">@style/Widget.ViewPageIndicator</item>
 
