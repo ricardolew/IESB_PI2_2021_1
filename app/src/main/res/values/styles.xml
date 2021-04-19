@@ -12,13 +12,24 @@
         <item name="android:textAppearance">@style/Textbutton</item>
     </style>
 
-    <style name="Widget.MaterialComponents.Button.OutlinedButton.SecundaryButton">
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.SecondaryButton">
         <item name="cornerRadius">8dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">16dp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="backgroundTint">?attr/colorInicio</item>
         <item name="strokeColor">?attr/colorInicio</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+        <item name="android:textAppearance">@style/Textbutton</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.VoltarButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="backgroundTint">?attr/colorVoltar</item>
+        <item name="strokeColor">?attr/colorVoltar</item>
         <item name="rippleColor">?attr/colorPrimary</item>
         <item name="android:textAppearance">@style/Textbutton</item>
     </style>

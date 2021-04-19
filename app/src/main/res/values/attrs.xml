@@ -3,10 +3,12 @@
 
     <attr format="reference" name="primaryButtonStyle"/>
     <attr format="reference" name="secundaryButtonStyle"/>
+    <attr format="reference" name="voltarButtonStyle"/>
     <attr format="reference" name="titleStyle"/>
     <attr format="reference" name="nomeStyle"/>
     <attr format="reference" name="colorInicio"/>
-    <attr format="reference" name="placeholderStyle"/>
+    <attr format="reference" name="colorVoltar"/>
+
 
 
     <attr format="reference" name="viewPagerDotsStyle"/>

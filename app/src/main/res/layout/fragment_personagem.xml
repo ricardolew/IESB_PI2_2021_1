@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
     tools:context=".ui.activity.antigos.PersonagemActivity">
 
     <Button
         android:id="@+id/btCharMap"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -22,6 +24,7 @@
 
     <Button
         android:id="@+id/btCharTaverna"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -35,6 +38,7 @@
 
     <Button
         android:id="@+id/btCharInv"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -48,6 +52,7 @@
 
     <Button
         android:id="@+id/btCharSpells"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -61,6 +66,7 @@
 
     <TextView
         android:id="@+id/tvCharNivel"
+        style="?titleStyle"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginTop="16dp"
@@ -92,6 +98,7 @@
 
     <TextView
         android:id="@+id/tvCharNome"
+        style="?titleStyle"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
@@ -106,6 +113,7 @@
 
     <Button
         android:id="@+id/btCharInfos"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

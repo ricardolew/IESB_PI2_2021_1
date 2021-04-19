@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
     tools:context=".ui.fragment.EsqueciFragment">
 
     <ImageView
         android:id="@+id/ivEsqueciLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/etEmailEsqueci"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +28,11 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="204dp"
         android:ems="10"
+        android:fontFamily="@font/lohengrin"
         android:hint="Digite seu E-mail"
         android:inputType="textEmailAddress"
+        android:letterSpacing="0.2"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btEnviarEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,6 +40,7 @@
 
     <Button
         android:id="@+id/btEnviarEmail"
+        style="?primaryButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -46,6 +53,7 @@
 
     <Button
         android:id="@+id/btVoltarEsqueci"
+        style="?voltarButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
