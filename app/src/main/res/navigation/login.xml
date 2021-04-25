@@ -27,5 +27,21 @@
     <fragment
         android:id="@+id/loginFragment2"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment2_to_cadastroFragment"
+            app:destination="@id/cadastroFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_esqueciFragment"
+            app:destination="@id/esqueciFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.CadastroFragment"
+        android:label="CadastroFragment" />
+    <fragment
+        android:id="@+id/esqueciFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.EsqueciFragment"
+        android:label="fragment_esqueci"
+        tools:layout="@layout/fragment_esqueci" />
 </navigation>

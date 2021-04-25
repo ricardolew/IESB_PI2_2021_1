@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import br.iesb.mobile.rpg_pi2_20211.R
+import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentLoginBinding
 //import br.iesb.mobile.rpg_pi2_20211.ui.activity.antigos.CadastroActivity
 //import br.iesb.mobile.rpg_pi2_20211.ui.activity.antigos.EsqueciActivity
 //import br.iesb.mobile.rpg_pi2_20211.ui.activity.antigos.HomeActivity
@@ -16,16 +18,21 @@ import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
 
+    private lateinit var binding: FragmentLoginBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    fun startCadastro(v: View){
 
+        findNavController().navigate(R.id.action_loginFragment2_to_cadastroFragment)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.fragmentLogin = this
+        binding.lifecycleOwner = this
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
