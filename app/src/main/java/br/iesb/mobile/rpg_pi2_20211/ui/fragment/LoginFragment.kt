@@ -14,19 +14,24 @@ import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentLoginBinding
 //import br.iesb.mobile.rpg_pi2_20211.ui.activity.antigos.EsqueciActivity
 //import br.iesb.mobile.rpg_pi2_20211.ui.activity.antigos.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_login.*
+import javax.inject.Inject
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+
 
     fun startCadastro(v: View){
 
         findNavController().navigate(R.id.action_loginFragment2_to_cadastroFragment)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?,
+                            ): View {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.fragmentLogin = this
@@ -37,6 +42,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         btEntrar.setOnClickListener {
             val email = etEmailLogin.text.toString()

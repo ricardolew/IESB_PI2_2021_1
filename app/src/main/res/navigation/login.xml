@@ -38,7 +38,11 @@
     <fragment
         android:id="@+id/cadastroFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.CadastroFragment"
-        android:label="CadastroFragment" />
+        android:label="CadastroFragment" >
+        <action
+            android:id="@+id/action_cadastroFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/esqueciFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.EsqueciFragment"
