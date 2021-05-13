@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="fragment"
+            name="fragmentHome"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.HomeFragment" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout

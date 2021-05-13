@@ -7,6 +7,9 @@
         <variable
             name="fragment"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.CadastroFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,7 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="30dp"
             android:text="@string/botao_cadastro_voltar"
+            android:onClick="@{fragment::voltar}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

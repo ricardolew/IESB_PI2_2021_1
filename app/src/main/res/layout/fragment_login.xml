@@ -6,8 +6,11 @@
 
     <data>
         <variable
-            name="FragmentLogin"
+            name="fragmentLogin"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.LoginFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,7 +44,31 @@
             android:textColorHint="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@={viewmodel.email}"/>
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/etEmailLogin"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="@string/hint_email"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/etSenhaLogin"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/ivLogo">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/lohengrin"-->
+<!--                android:ems="10"-->
+<!--                android:hint="@string/email_hint"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:text="@={viewmodel.email}" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <EditText
             android:id="@+id/etSenhaLogin"
@@ -52,12 +79,13 @@
             android:ems="10"
             android:fontFamily="@font/lohengrin"
             android:hint="@string/hint_senha"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:letterSpacing="0.2"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            android:text="@={viewmodel.password}"/>
 
         <TextView
             android:id="@+id/tvEsqueci"
@@ -82,6 +110,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="@string/botao_entrar"
+            android:onClick="@{fragmentLogin::login}"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btCad"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,12 +126,13 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="@string/botao_cad"
+            android:onClick="@{fragmentLogin::startCadastro}"
             android:textStyle="bold"
-            android:onClick="@{FragmentLogin::startCadastro}"
             app:layout_constraintBottom_toTopOf="@+id/tvEsqueci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btEntrar" />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

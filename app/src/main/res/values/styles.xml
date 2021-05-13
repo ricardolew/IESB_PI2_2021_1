@@ -50,10 +50,14 @@
         <item name="dotsStrokeColor">?attr/colorSecondaryVariant</item>
         <item name="dotsStrokeWidth">2dp</item>
         <item name="dotsCornerRadius">8dp</item>
-        <item name="dotsSize">8dp</item>
+        <item name="dotsSize">12dp</item>
         <item name="dotsSpacing">4dp</item>
     </style>
 
+    <style name="Widget.SubTitle1" parent="android:Widget">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
 
 
 

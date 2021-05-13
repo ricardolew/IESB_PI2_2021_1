@@ -25,6 +25,13 @@
         <item name="titleStyle"> @style/Widget.Title</item>
         <item name="nomeStyle"> @style/Widget.Nome</item>
 
+        <item name="subtitleStyle">@style/Widget.SubTitle1</item>
+
+
+
+
+
+
 
 
         <item name="viewPagerDotsStyle">@style/Widget.ViewPageIndicator</item>

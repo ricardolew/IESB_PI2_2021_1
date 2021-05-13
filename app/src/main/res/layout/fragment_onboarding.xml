@@ -15,6 +15,19 @@
         android:layout_height="match_parent"
         tools:context=".OnboardingFragment">
 
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageview3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/screen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vpOnboarding"
             android:layout_width="0dp"
@@ -27,7 +40,32 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
+
         </androidx.viewpager2.widget.ViewPager2>
+
+        <TextView
+            android:id="@+id/tvNome2"
+            style="?nomeStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="400dp"
+            android:text="Not another RPG"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/WormDotsIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="187dp"
+            android:layout_height="163dp"
+            android:layout_marginBottom="600dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gifImageview3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logosplash" />
 
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/WormDotsIndicator"

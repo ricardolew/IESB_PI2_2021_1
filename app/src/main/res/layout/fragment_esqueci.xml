@@ -5,9 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="fragment"
+            name="fragmentEsqueci"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.EsqueciFragment" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

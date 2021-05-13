@@ -8,7 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
 @Module
-@InstallIn(SingletonComponent :: class)
+@InstallIn(SingletonComponent::class)
 class AuthModule {
 
     @Provides

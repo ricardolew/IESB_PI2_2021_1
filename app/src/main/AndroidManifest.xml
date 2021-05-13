@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.iesb.mobile.rpg_pi2_20211">
 
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-feature android:name="android.hardware.type.watch" />
 
     <application
+        android:name=".RpgApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,15 +30,17 @@
 
 
         <!-- <activity android:name=".ui.activity.AppActivity"></activity> -->
-        <activity android:name=".ui.activity.loginActivity">
-
-        </activity>
-        <activity android:name=".ui.activity.AppActivity" >
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+        </activity>
+        <activity android:name=".ui.activity.AppActivity" >
+
         </activity>
     </application>
 

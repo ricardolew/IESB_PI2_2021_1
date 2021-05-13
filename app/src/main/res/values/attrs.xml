@@ -9,6 +9,9 @@
     <attr format="reference" name="colorInicio"/>
     <attr format="reference" name="colorVoltar"/>
 
+    <attr format="reference" name="subtitleStyle"/>
+
+
 
 
     <attr format="reference" name="viewPagerDotsStyle"/>
