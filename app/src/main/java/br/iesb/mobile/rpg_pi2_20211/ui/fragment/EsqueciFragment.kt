@@ -15,9 +15,11 @@ import br.iesb.mobile.rpg_pi2_20211.viewmodel.LoginViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_esqueci.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class EsqueciFragment : Fragment() {
+
 
     private lateinit var binding: FragmentEsqueciBinding
     private val viewmodel: LoginViewModel by viewModels()

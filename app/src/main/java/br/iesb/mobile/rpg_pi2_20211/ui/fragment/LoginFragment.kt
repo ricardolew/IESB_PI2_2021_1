@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.fragmentLogin = this
-        binding.lifecycleOwner = this
+        binding.viewmodel = viewmodel
 
 
 
@@ -58,7 +58,7 @@ class LoginFragment : Fragment() {
 
                 when (it) {
                     is LoginResult.Success -> {
-                        requireActivity().finish()
+//                        requireActivity().finish()
                         findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
                     }
                     is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG)
