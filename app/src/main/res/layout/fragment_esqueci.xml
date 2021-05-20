@@ -5,8 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="fragmentEsqueci"
+            name="fragment"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.EsqueciFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,32 +22,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/etEmailEsqueci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/etEmailEsqueci"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="204dp"
-            android:ems="10"
-            android:fontFamily="@font/lohengrin"
-            android:hint="Digite seu E-mail"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.2"
-            android:textColorHint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/btEnviarEmail"
+            android:layout_marginTop="128dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEsqueciLogo">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:text="@={viewmodel.email}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/btEnviarEmail"
             style="?primaryButtonStyle"
@@ -54,6 +55,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="Enviar"
+            android:onClick="@{fragment::forgot}"
             app:layout_constraintBottom_toTopOf="@+id/btVoltarEsqueci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -67,9 +69,11 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="Voltar"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

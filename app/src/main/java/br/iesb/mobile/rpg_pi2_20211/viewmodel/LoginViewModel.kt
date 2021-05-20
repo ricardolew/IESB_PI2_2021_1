@@ -29,8 +29,16 @@ class LoginViewModel @Inject constructor(
             }
         }
 
+    fun forgot(){
+        viewModelScope.launch {
+            result.value = interactor.forgot(email.value)
+        }
+    }
+
 
     }
+
+
 //        viewModelScope.launch {
 //            try {
 //                result.value = interactor.login(email.value, password.value)

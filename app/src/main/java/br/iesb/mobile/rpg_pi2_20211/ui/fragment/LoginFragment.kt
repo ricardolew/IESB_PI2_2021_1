@@ -73,6 +73,10 @@ class LoginFragment : Fragment() {
 //        activity?.showLoading()
         viewmodel.login()
     }
+    @Suppress("UNUSED_PARAMETER")
+    fun forgot(v:View){
+        findNavController().navigate(R.id.action_loginFragment2_to_esqueciFragment)
+    }
 
     @SuppressWarnings
     fun startCadastro(v: View){

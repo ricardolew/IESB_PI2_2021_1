@@ -62,6 +62,18 @@ class LoginInteractor @Inject constructor (
             else -> LoginResult.Error(ex.localizedMessage, ex)
         }
     }
+
+    suspend fun forgot(email: String?): LoginResult<Nothing> {
+        if (email.isNullOrBlank()) {
+            throw Exception(app.getString(R.string.email_required))
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            throw Exception(app.getString(R.string.invalid_email))
+        }
+
+        return repo.forgot(email)
+    }
 }
 
 //    suspend fun login(email: String?, password: String?): String {

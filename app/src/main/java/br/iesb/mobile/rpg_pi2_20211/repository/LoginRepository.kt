@@ -72,13 +72,13 @@ class LoginRepository @Inject constructor(
         }
     }
 
-    suspend fun forgot(email: String): String = suspendCoroutine { nextStep ->
+    suspend fun forgot(email: String): LoginResult<Nothing> = suspendCoroutine { nextStep ->
         val operation = auth.sendPasswordResetEmail(email)
         operation.addOnCompleteListener { op ->
             val res = if (op.isSuccessful) {
-                "OK"
+                LoginResult.Success()
             } else {
-                op.exception.toString()
+                parseResultError(op.exception)
             }
             nextStep.resume(res)
         }

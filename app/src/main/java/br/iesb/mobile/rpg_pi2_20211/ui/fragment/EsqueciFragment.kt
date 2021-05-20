@@ -33,24 +33,30 @@ class EsqueciFragment : Fragment() {
     ): View {
         binding = FragmentEsqueciBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
-        binding.fragmentEsqueci = this
-//      binding.viewmodel = viewmodel
+        binding.fragment = this
+        binding.viewmodel = viewmodel
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewmodel.result.observe(viewLifecycleOwner) {
-//            when (it) {
-//                "Ok" -> {
-//                    requireActivity().finish()
-//                    Toast.makeText(context, getText(R.string.reset_password_email_sent), Toast.LENGTH_LONG).show()
-//                    activity?.finish()
-//                }
-//                else -> Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-//            }
-//        }
+        viewmodel.result.observe(viewLifecycleOwner) {
+            when (it) {
+                is LoginResult.Success -> {
+                    requireActivity().finish()
+                    Toast.makeText(context, getText(R.string.reset_password_email_sent), Toast.LENGTH_LONG).show()
+
+                }
+                else -> Toast.makeText(context, it.toString(), Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    @Suppress
+    fun forgot(v: View) {
+
+        viewmodel.forgot()
     }
 
 

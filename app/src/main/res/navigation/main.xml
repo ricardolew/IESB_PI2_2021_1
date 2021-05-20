@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/personagemFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.PersonagemFragment"
+        android:label="PersonagemFragment"
+        tools:layout="@layout/fragment_personagem"/>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_personagemFragment"
+            app:destination="@id/personagemFragment" />
+    </fragment>
+</navigation>
