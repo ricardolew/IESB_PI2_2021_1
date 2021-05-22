@@ -24,14 +24,14 @@ class CadastroFragment : Fragment() {
     private val viewmodel: LoginViewModel by viewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentCadastroBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.fragment = this
-//        binding.viewmodel = viewmodel
+        binding.viewmodel = viewmodel
 
         return binding.root
     }
@@ -39,94 +39,27 @@ class CadastroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        viewmodel.result.observe(viewLifecycleOwner) {
-//            when (it) {
-//                "OK" -> {
-//                    requireActivity().finish()
-//                    Toast.makeText(context, getText(R.string.signup_successfully), Toast.LENGTH_LONG).show()
-//                }
-//                else -> Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-//            }
-//        }
+        viewmodel.result.observe(viewLifecycleOwner) {
+            when (it) {
+                is LoginResult.Success -> {
+                    requireActivity().finish()
+                    Toast.makeText(
+                        context,
+                        getText(R.string.signup_successfully),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
 
     }
 
-    @SuppressWarnings
-    fun voltar(v: View){
+    @Suppress
+    fun signup(v: View) {
 
+        viewmodel.singnup()
     }
-
-
 }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//    }
-//
-////    override fun onCreateView(inflater: LayoutInflater,
-////                              container: ViewGroup?,
-////                              savedInstanceState: Bundle?,
-////    ): View {
-////
-////        binding = FragmentLoginBinding.inflate(inflater, container, false)
-////        binding.fragmentLogin = this
-////        binding.lifecycleOwner = this
-////
-////        return binding.root
-////    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        btCadastroConfirma.setOnClickListener {
-//
-//            val email = etEmailCadastro.text.toString()
-//            val senha = etSenhaCadastro.text.toString()
-//            val senhaConfirmada = etSenhaConfirmaCadastro.text.toString()
-//
-//            val auth = FirebaseAuth.getInstance()
-//
-//            if(email.isEmpty() or senha.isEmpty()){
-//
-//                Toast.makeText(activity, "Digite o email e a senha desejada", Toast.LENGTH_LONG).show()
-//            }
-//
-//            if(senha != senhaConfirmada){
-//
-//                Toast.makeText(activity, "Digite a mesma senha", Toast.LENGTH_LONG).show()
-//            }
-//            else{
-//
-//                val taskCadastro = auth.createUserWithEmailAndPassword(email, senha)
-//
-//                taskCadastro.addOnCompleteListener{resultado ->
-//
-//                    if(resultado.isSuccessful){
-//
-//                        Toast.makeText(activity, "Cadastro realizado com sucesso", Toast.LENGTH_LONG).show()
-//
-//                        activity?.finish()
-//
-//                    }
-//                    else{
-//
-//                        Toast.makeText(activity, "Email já está sendo utilizado. Digite outro", Toast.LENGTH_LONG).show()
-//                    }
-//
-//
-//                }
-//            }
-//        }
-//
-//        btCadastroVolta.setOnClickListener {
-//
-//            activity?.finish()
-//        }
-//    }
-//
-////    fun voltar(v: View) {
-////        findNavController().navigate(R.id.action_cadastroFragment_to_loginFragment2)
-////    }
-//}
-//

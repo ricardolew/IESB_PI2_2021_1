@@ -74,12 +74,16 @@ class LoginInteractor @Inject constructor (
 
         return repo.forgot(email)
     }
+
+    suspend fun singup(email: String?, password: String?): LoginResult<Nothing> {
+        val (credential, ex) = validadeEmailAndPassword(email, password)
+        return when (ex){
+            null -> repo.signup(credential!!.first, credential.second)
+            else -> LoginResult.Error(ex.localizedMessage, ex)
+        }
+    }
 }
 
-//    suspend fun login(email: String?, password: String?): String {
-//        val (e, p) = validadeEmailAndPassword(email, password)
-//        return repo.login(e, p)
-//    }
 
 
 

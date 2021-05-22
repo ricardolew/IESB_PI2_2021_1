@@ -60,13 +60,13 @@ class LoginRepository @Inject constructor(
 //        }
 //    }
 
-    suspend fun signup(email: String, pass:String): String = suspendCoroutine { nextStep ->
+    suspend fun signup(email: String, pass:String): LoginResult<Nothing> = suspendCoroutine { nextStep ->
         val operation = auth.createUserWithEmailAndPassword(email, pass)
         operation.addOnCompleteListener { op ->
             val res = if (op.isSuccessful) {
-                "OK"
+                LoginResult.Success()
             } else {
-                op.exception.toString()
+                parseResultError(op.exception)
             }
             nextStep.resume(res)
         }

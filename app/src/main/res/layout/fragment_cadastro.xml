@@ -28,56 +28,69 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/etEmailCadastro"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:fontFamily="@font/lohengrin"
-            android:hint="@string/hint_cadastro_email"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.2"
-            android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivCadastroLogo" />
+            app:layout_constraintTop_toBottomOf="@+id/ivCadastroLogo">
 
-        <EditText
-            android:id="@+id/etSenhaCadastro"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:fontFamily="@font/lohengrin"
-            android:hint="@string/hint_cadastro_senha"
-            android:inputType="textPassword"
-            android:letterSpacing="0.2"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailCadastro" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:text="@={viewmodel.email}" />
 
-        <EditText
-            android:id="@+id/etSenhaConfirmaCadastro"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:fontFamily="@font/lohengrin"
-            android:hint="@string/hint_cadastro_senha_confirma"
-            android:inputType="textPassword"
-            android:letterSpacing="0.2"
-            android:textColorHint="@color/white"
+            app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etSenhaCadastro" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password_hint"
+                android:inputType="numberPassword"
+                android:text="@={viewmodel.password}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tlPassword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password_check_hint"
+                android:inputType="numberPassword"
+                android:text="@={viewmodel.passwordCheck}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btCadastroConfirma"
@@ -88,6 +101,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="140dp"
             android:text="@string/botao_cadastro_confirmar"
+            android:onClick="@{fragment::signup}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

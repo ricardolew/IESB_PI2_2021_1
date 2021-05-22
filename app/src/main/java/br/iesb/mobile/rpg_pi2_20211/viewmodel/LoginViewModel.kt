@@ -35,6 +35,12 @@ class LoginViewModel @Inject constructor(
         }
     }
 
+    fun singnup() {
+        viewModelScope.launch {
+            result.value = interactor.singup(email.value, password.value)
+        }
+    }
+
 
     }
 
