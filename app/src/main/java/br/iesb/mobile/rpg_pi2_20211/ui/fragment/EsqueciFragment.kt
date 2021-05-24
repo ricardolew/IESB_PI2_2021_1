@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentCadastroBinding
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentEsqueciBinding
@@ -44,7 +45,7 @@ class EsqueciFragment : Fragment() {
         viewmodel.result.observe(viewLifecycleOwner) {
             when (it) {
                 is LoginResult.Success -> {
-                    requireActivity().finish()
+                    findNavController().popBackStack()
                     Toast.makeText(context, getText(R.string.reset_password_email_sent), Toast.LENGTH_LONG).show()
 
                 }

@@ -42,7 +42,7 @@ class CadastroFragment : Fragment() {
         viewmodel.result.observe(viewLifecycleOwner) {
             when (it) {
                 is LoginResult.Success -> {
-                    requireActivity().finish()
+                    findNavController().popBackStack()
                     Toast.makeText(
                         context,
                         getText(R.string.signup_successfully),

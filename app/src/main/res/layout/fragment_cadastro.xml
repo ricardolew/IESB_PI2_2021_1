@@ -115,7 +115,6 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="30dp"
-            android:onClick="@{fragment::voltar}"
             android:text="@string/botao_cadastro_voltar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
