@@ -56,8 +56,12 @@ class EsqueciFragment : Fragment() {
 
     @Suppress
     fun forgot(v: View) {
-
         viewmodel.forgot()
+    }
+
+    @Suppress
+    fun back (v: View) {
+        findNavController().popBackStack()
     }
 
 

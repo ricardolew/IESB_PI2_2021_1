@@ -58,8 +58,12 @@ class CadastroFragment : Fragment() {
 
     @Suppress
     fun signup(v: View) {
-
         viewmodel.singnup()
+    }
+
+    @Suppress
+    fun back (v: View) {
+        findNavController().popBackStack()
     }
 }
 
