@@ -1,4 +1,4 @@
-package br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding
+package br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,22 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import br.iesb.mobile.rpg_pi2_20211.R
+import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentCriarPersonagemOnboardingBinding
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentOnboardingBinding
+import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.AdaptadorVP
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingFirstFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingSecondFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingThirdFragment
+import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarFirstFragment
+import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarSecondFragment
+import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarThirdFragment
 
 
-class OnboardingFragment : Fragment() {
+class CriarPersonagemOnboarding : Fragment() {
 
-    private lateinit var binding: FragmentOnboardingBinding
+    private lateinit var binding: FragmentCriarPersonagemOnboardingBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
-        binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        binding = FragmentCriarPersonagemOnboardingBinding.inflate(inflater, container, false)
 
         binding.fragment=this
         binding.lifecycleOwner = this
@@ -31,40 +38,34 @@ class OnboardingFragment : Fragment() {
 
         //fonte de dados
         val listaFragmentos = listOf(
-            OnboardingFirstFragment(),
-            OnboardingSecondFragment(),
-            OnboardingThirdFragment()
+            CriarFirstFragment(),
+            CriarSecondFragment(),
+            CriarThirdFragment()
         )
 
         //adaptador
-        val adaptador = AdaptadorVP(
+        val adaptador = AdaptadorVPcriar(
             listaFragmentos,
             requireActivity().supportFragmentManager,
             lifecycle
         )
 
 
-        binding.vpOnboarding.adapter = adaptador
-        binding.WormDotsIndicator.setViewPager2(binding.vpOnboarding)
+        binding.vpCriarOB.adapter = adaptador
+        binding.WormDotsIndicator.setViewPager2(binding.vpCriarOB)
 
         return binding.root
 
-
-
     }
 
-    @SuppressWarnings
-    fun start(v:View){
-        findNavController().navigate(R.id.action_onboardingFragment4_to_loginFragment2)
-    }
-    
+
 }
 
-class AdaptadorVP(
+class AdaptadorVPcriar(
     val listaFragmentos: List<Fragment>,
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
-): FragmentStateAdapter (fragmentManager, lifecycle){
+): FragmentStateAdapter(fragmentManager, lifecycle){
 
     override fun getItemCount() = listaFragmentos.size
     override fun createFragment(position: Int) = listaFragmentos[position]

@@ -36,11 +36,11 @@
             android:id="@+id/action_loginFragment2_to_esqueciFragment"
             app:destination="@id/esqueciFragment" />
         <action
-            android:id="@+id/action_loginFragment2_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_loginFragment2_to_cadastroFragment"
             app:destination="@id/cadastroFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_appActivity"
+            app:destination="@id/appActivity" />
     </fragment>
 
     <fragment
@@ -50,13 +50,13 @@
         tools:layout="@layout/fragment_esqueci" />
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
-    <fragment
         android:id="@+id/cadastroFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.CadastroFragment"
         android:label="CadastroFragment" />
+    <activity
+        android:id="@+id/appActivity"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.activity.AppActivity"
+        android:label="activity_app"
+        tools:layout="@layout/activity_app" />
 
 </navigation>

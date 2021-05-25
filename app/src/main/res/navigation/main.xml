@@ -18,5 +18,12 @@
         <action
             android:id="@+id/action_homeFragment_to_personagemFragment"
             app:destination="@id/personagemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_criarPersonagemOnboarding"
+            app:destination="@id/criarPersonagemOnboarding" />
     </fragment>
+    <fragment
+        android:id="@+id/criarPersonagemOnboarding"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.CriarPersonagemOnboarding"
+        android:label="CriarPersonagemOnboarding" />
 </navigation>

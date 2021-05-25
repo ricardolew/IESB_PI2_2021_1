@@ -20,11 +20,6 @@
     <string name="signup_successfully">Cadastro efetuado com sucesso!</string>
 
 
-
-
-
-
-
     <string name="login_success">Login efetuado com sucesso!</string>
     <string name="email_required">E-mail obrigatório!</string>
     <string name="invalid_email">E-mail inválido!</string>
@@ -47,13 +42,17 @@
 
 
     <string name="email_hint">E-mail</string>
+    <string name="nome_hint">Nome do personagem</string>
+    <string name="elemento_hint">Elemento do personagem</string>
+
+
     <string name="back">Voltar</string>
     <string name="send">enviar</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
     <string name="password_hint">Senha</string>
     <string name="password_check_hint">Repetir a Senha</string>
-    <string name="loading">Processando. <br/> Por favor aguarde...</string>
+    <string name="loading">Processando. <br /> Por favor aguarde...</string>
     <string name="network_connection_lost">Conexão com a internet indisponível. Verifique sua conexão.</string>
 
     <!-- Login (Firebase Errors) -->

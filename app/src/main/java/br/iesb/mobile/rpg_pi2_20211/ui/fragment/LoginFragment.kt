@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
                 when (it) {
                     is LoginResult.Success -> {
 //                        requireActivity().finish()
-                        findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
+                        findNavController().navigate(R.id.action_loginFragment2_to_appActivity)
                     }
                     is LoginResult.Error -> Toast.makeText(context, it.message, Toast.LENGTH_LONG)
                             .show()
