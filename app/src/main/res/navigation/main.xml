@@ -25,5 +25,9 @@
     <fragment
         android:id="@+id/criarPersonagemOnboarding"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.CriarPersonagemOnboarding"
-        android:label="CriarPersonagemOnboarding" />
+        android:label="CriarPersonagemOnboarding" >
+        <action
+            android:id="@+id/action_criarPersonagemOnboarding_to_personagemFragment"
+            app:destination="@id/personagemFragment" />
+    </fragment>
 </navigation>

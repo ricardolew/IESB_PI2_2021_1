@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentCriarPersonagemOnboardingBinding
@@ -56,6 +57,16 @@ class CriarPersonagemOnboarding : Fragment() {
 
         return binding.root
 
+    }
+
+    @SuppressWarnings
+    fun start(v:View){
+        findNavController().navigate(R.id.action_criarPersonagemOnboarding_to_personagemFragment)
+    }
+
+    @SuppressWarnings
+    fun back(v: View){
+        findNavController().popBackStack()
     }
 
 

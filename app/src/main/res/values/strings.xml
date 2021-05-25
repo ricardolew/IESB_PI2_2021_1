@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RPG_PI2_20211</string>
+    <string name="app_name">Not another RPG</string>
 
     <string name="hint_email">Email</string>
     <string name="hint_senha">Palavra mágica</string>
