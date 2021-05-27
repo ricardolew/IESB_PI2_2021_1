@@ -7,6 +7,10 @@
         <variable
             name="fragment"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.CriarPersonagemOnboarding" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/nome_hint"
+                android:text="@={viewmodel.nome}"
                 android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,38 +90,72 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/elemento_hint"
+                android:text="@={viewmodel.elemento}"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <Button
-            android:id="@+id/btCriarConfirma"
+            android:id="@+id/btEntrar"
             style="?primaryButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="25dp"
-            android:text="@string/botao_cadastro_confirmar"
             android:onClick="@{fragment::start}"
-            app:layout_constraintBottom_toTopOf="@+id/btCriarVolta"
+            android:text="Confirmar"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btCad"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiElementoPersonagem" />
 
         <Button
-            android:id="@+id/btCriarVolta"
-            style="?voltarButtonStyle"
+            android:id="@+id/btCad"
+            style="?secundaryButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="67dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/botao_cadastro_voltar"
             android:onClick="@{fragment::back}"
+            android:text="Voltar"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiElementoPersonagem" />
+
+        <!--        <Button-->
+<!--            android:id="@+id/btCriarConfirma"-->
+<!--            style="?primaryButtonStyle"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:layout_marginBottom="25dp"-->
+<!--            android:text="@string/botao_cadastro_confirmar"-->
+<!--            android:onClick="@{fragment::start}"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/btCriarVolta"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btCriarVolta"-->
+<!--            style="?voltarButtonStyle"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:layout_marginBottom="30dp"-->
+<!--            android:text="@string/botao_cadastro_voltar"-->
+<!--            android:onClick="@{fragment::back}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

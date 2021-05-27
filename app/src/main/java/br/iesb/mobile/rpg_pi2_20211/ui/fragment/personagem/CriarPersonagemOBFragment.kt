@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
@@ -21,22 +22,29 @@ import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingThir
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarFirstFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarSecondFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarThirdFragment
+import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_criar_first.*
 
-
+@AndroidEntryPoint
 class CriarPersonagemOnboarding : Fragment() {
 
     private lateinit var binding: FragmentCriarPersonagemOnboardingBinding
+    private val viewmodel: RpgApiViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
+
+
         binding = FragmentCriarPersonagemOnboardingBinding.inflate(inflater, container, false)
 
         binding.fragment=this
         binding.lifecycleOwner = this
+
+        binding.viewmodel = viewmodel
 
 
 
@@ -64,7 +72,7 @@ class CriarPersonagemOnboarding : Fragment() {
 
     @SuppressWarnings
     fun start(v:View){
-        var classe:Int = -1
+        var classe: Int = -1
         if (tvCriar.text.toString() == "Arqueiro"){
             classe = 1
         }
@@ -74,7 +82,8 @@ class CriarPersonagemOnboarding : Fragment() {
         else if (tvCriar.text.toString() == "Mago") {
             classe = 3
         }
-
+        viewmodel.createUser(classe)
+        println("Nav")
         findNavController().navigate(R.id.action_criarPersonagemOnboarding_to_personagemFragment)
     }
 
