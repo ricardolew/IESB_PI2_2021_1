@@ -2,6 +2,7 @@ package br.iesb.mobile.rpg_pi2_20211.interactor
 
 import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
 import br.iesb.mobile.rpg_pi2_20211.repository.RpgApiRepository
+import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -13,7 +14,7 @@ class RpgApiInteractor @Inject constructor(
     private fun elementotoInt (elemento: String?) : Int {
         var el:Int = 0
 
-        if(elemento.toString() == "Agua"){
+        if(elemento.toString() == "Água"){
             el = 1
         }else if (elemento.toString() == "Fogo"){
             el = 2
@@ -26,10 +27,12 @@ class RpgApiInteractor @Inject constructor(
         return repository.loadData()
     }
 
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?) {
+    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?){
         val el = elementotoInt(Elemento)
         println("interactor Create")
         repo.createuser(classe, Nome, el)
+
+
 
     }
 }

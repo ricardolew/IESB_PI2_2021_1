@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/menu1"
+        android:title="Água" />
+    <item android:title="Fogo"
+    android:id="@+id/menu2"/>
+    <item android:title="Natureza"
+        android:id="@+id/menu3"/>
+    <item android:title="Luz"
+        android:id="@+id/menu4"/>
+    <item android:title="Escuridao"
+        android:id="@+id/menu5" />
+
+
+</menu>

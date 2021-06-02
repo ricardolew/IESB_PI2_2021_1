@@ -62,4 +62,17 @@
     <string name="login_generic_error">Não foi possível efetuar login. Por favor verifique os dados</string>
     <string name="hello_world">Hello Square World!</string>
 
+
+        <string-array name="planets_array">
+            <item>Mercury</item>
+            <item>Venus</item>
+            <item>Earth</item>
+            <item>Mars</item>
+            <item>Jupiter</item>
+            <item>Saturn</item>
+            <item>Uranus</item>
+            <item>Neptune</item>
+        </string-array>
+
+
 </resources>

@@ -3,8 +3,12 @@ package br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.PopupMenu
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
@@ -25,6 +29,7 @@ import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarThirdFrag
 import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_criar_first.*
+import kotlinx.android.synthetic.main.fragment_criar_personagem_onboarding.*
 
 @AndroidEntryPoint
 class CriarPersonagemOnboarding : Fragment() {
@@ -32,11 +37,12 @@ class CriarPersonagemOnboarding : Fragment() {
     private lateinit var binding: FragmentCriarPersonagemOnboardingBinding
     private val viewmodel: RpgApiViewModel by viewModels()
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
 
 
         binding = FragmentCriarPersonagemOnboardingBinding.inflate(inflater, container, false)
@@ -71,6 +77,23 @@ class CriarPersonagemOnboarding : Fragment() {
     }
 
     @SuppressWarnings
+    fun PopUpElement(v:View){
+
+        val popup = PopupMenu(activity,btElmento)
+
+        popup.inflate(R.menu.teste)
+
+        popup.setOnMenuItemClickListener {
+            val item = it.title.toString()
+            viewmodel.elemento = item
+            Toast.makeText(activity, "Item: " +it.title, Toast.LENGTH_SHORT).show()
+            true
+
+        }
+        popup.show()
+    }
+
+    @SuppressWarnings
     fun start(v:View){
         var classe: Int = -1
         if (tvCriar.text.toString() == "Arqueiro"){
@@ -82,6 +105,7 @@ class CriarPersonagemOnboarding : Fragment() {
         else if (tvCriar.text.toString() == "Mago") {
             classe = 3
         }
+
         viewmodel.createUser(classe)
         println("Nav")
         findNavController().navigate(R.id.action_criarPersonagemOnboarding_to_personagemFragment)
@@ -94,6 +118,7 @@ class CriarPersonagemOnboarding : Fragment() {
 
 
 }
+
 
 class AdaptadorVPcriar(
     val listaFragmentos: List<Fragment>,

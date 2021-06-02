@@ -1,10 +1,12 @@
 package br.iesb.mobile.rpg_pi2_20211.viewmodel
 
 import android.app.Application
+import android.telecom.Call
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
 import br.iesb.mobile.rpg_pi2_20211.interactor.RpgApiInteractor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -18,7 +20,10 @@ class RpgApiViewModel @Inject constructor(
 ) : AndroidViewModel(app) {
 
     val nome = MutableLiveData<String>()
-    val elemento = MutableLiveData<String>()
+//    var elemento = MutableLiveData<String>()
+     var elemento : String = ""
+
+
 
 
     fun loadData() {
@@ -54,7 +59,7 @@ class RpgApiViewModel @Inject constructor(
     fun createUser(classe: Int) {
         viewModelScope.launch {
             println("vm create")
-            interactor.createuser(classe,nome.value,elemento.value)
+           interactor.createuser(classe,nome.value,elemento)
         }
     }
 }
