@@ -48,4 +48,9 @@ class HomeFragment : Fragment() {
         findNavController().navigate(R.id.action_homeFragment_to_chatBotFragment)
 
     }
+
+    fun map(v:View){
+        findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
+
+    }
 }

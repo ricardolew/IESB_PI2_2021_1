@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_chatBotFragment"
             app:destination="@id/chatBotFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/criarPersonagemOnboarding"
@@ -44,4 +47,13 @@
         android:id="@+id/chatBotFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.chatbot.ChatBotFragment"
         android:label="ChatBotFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_personagemFragment"
+            app:destination="@id/personagemFragment" />
+    </fragment>
 </navigation>

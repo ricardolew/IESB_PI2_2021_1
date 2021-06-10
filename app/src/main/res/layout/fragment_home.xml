@@ -86,5 +86,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/amareloInicio"
+            android:onClick="@{fragmentHome::map}"
+            android:text="Map"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

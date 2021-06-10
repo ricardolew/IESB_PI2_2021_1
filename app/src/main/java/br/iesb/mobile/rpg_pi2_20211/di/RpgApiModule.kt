@@ -1,12 +1,14 @@
 package br.iesb.mobile.rpg_pi2_20211.di
 
 import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
+import br.iesb.mobile.rpg_pi2_20211.domain.ResultCreate
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -28,9 +30,10 @@ class RpgApiModule {
             .create()
 
             return Retrofit.Builder()
-            .baseUrl("https://teste-api-poo-rpg.herokuapp.com/")
+            .baseUrl("https://api-pdm.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
+        //https://teste-api-poo-rpg.herokuapp.com/
     }
 
     @Provides

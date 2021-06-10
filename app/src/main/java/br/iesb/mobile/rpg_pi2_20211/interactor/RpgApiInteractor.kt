@@ -1,7 +1,9 @@
 package br.iesb.mobile.rpg_pi2_20211.interactor
 
 import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
+import br.iesb.mobile.rpg_pi2_20211.domain.ResultCreate
 import br.iesb.mobile.rpg_pi2_20211.repository.RpgApiRepository
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject

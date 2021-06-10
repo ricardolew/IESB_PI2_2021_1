@@ -59,7 +59,8 @@ class RpgApiViewModel @Inject constructor(
     fun createUser(classe: Int) {
         viewModelScope.launch {
             println("vm create")
-           interactor.createuser(classe,nome.value,elemento)
+           val id = interactor.createuser(classe,nome.value,elemento)
+            println(id)
         }
     }
 }

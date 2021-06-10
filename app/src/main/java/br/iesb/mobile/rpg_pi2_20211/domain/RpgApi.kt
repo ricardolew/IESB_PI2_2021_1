@@ -10,4 +10,8 @@ data class CharacterApiResult(
     val results: List<Jogador>
 )
 
+data class ResultCreate(
+    val text: String?
+)
+
 

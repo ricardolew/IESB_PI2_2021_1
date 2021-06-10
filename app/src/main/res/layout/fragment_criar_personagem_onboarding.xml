@@ -14,7 +14,6 @@
     </data>
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,8 +29,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-        </androidx.viewpager2.widget.ViewPager2>
+            app:layout_constraintVertical_bias="0.0"></androidx.viewpager2.widget.ViewPager2>
 
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/WormDotsIndicator"
@@ -70,33 +68,33 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/nome_hint"
-                android:text="@={viewmodel.nome}"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:text="@={viewmodel.nome}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/tiElementoPersonagem"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="32dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="1.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tiNomePersonagem">-->
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/tiElementoPersonagem"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="1.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tiNomePersonagem">-->
 
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:ems="10"-->
-<!--                android:hint="@string/elemento_hint"-->
-<!--                android:text="@={viewmodel.elemento}"-->
-<!--                android:inputType="textEmailAddress" />-->
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:ems="10"-->
+        <!--                android:hint="@string/elemento_hint"-->
+        <!--                android:text="@={viewmodel.elemento}"-->
+        <!--                android:inputType="textEmailAddress" />-->
 
 
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <Button
             android:id="@+id/btEntrar"
@@ -104,9 +102,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="62dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="8dp"
             android:onClick="@{fragment::start}"
             android:text="Confirmar"
             android:textStyle="bold"
@@ -114,8 +111,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btElmento"
-            app:layout_constraintVertical_bias="0.531" />
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
         <Button
             android:id="@+id/btCad"
@@ -124,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="36dp"
             android:onClick="@{fragment::back}"
             android:text="Voltar"
             android:textStyle="bold"
@@ -137,45 +133,52 @@
             android:id="@+id/btElmento"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.PrimaryButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="67dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/elemento_hint"
             android:onClick="@{fragment::PopUpElement}"
+            android:text="@string/elemento_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiNomePersonagem" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="515dp" />
+
 
         <!--        <Button-->
-<!--            android:id="@+id/btCriarConfirma"-->
-<!--            style="?primaryButtonStyle"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="32dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:layout_marginBottom="25dp"-->
-<!--            android:text="@string/botao_cadastro_confirmar"-->
-<!--            android:onClick="@{fragment::start}"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/btCriarVolta"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <!--            android:id="@+id/btCriarConfirma"-->
+        <!--            style="?primaryButtonStyle"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            android:layout_marginBottom="25dp"-->
+        <!--            android:text="@string/botao_cadastro_confirmar"-->
+        <!--            android:onClick="@{fragment::start}"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/btCriarVolta"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-<!--        <Button-->
-<!--            android:id="@+id/btCriarVolta"-->
-<!--            style="?voltarButtonStyle"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="32dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:layout_marginBottom="30dp"-->
-<!--            android:text="@string/botao_cadastro_voltar"-->
-<!--            android:onClick="@{fragment::back}"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/btCriarVolta"-->
+        <!--            style="?voltarButtonStyle"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            android:layout_marginBottom="30dp"-->
+        <!--            android:text="@string/botao_cadastro_voltar"-->
+        <!--            android:onClick="@{fragment::back}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
