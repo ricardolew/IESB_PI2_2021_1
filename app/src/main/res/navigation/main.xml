@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_criarPersonagemOnboarding"
             app:destination="@id/criarPersonagemOnboarding" />
+        <action
+            android:id="@+id/action_homeFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
     </fragment>
     <fragment
         android:id="@+id/criarPersonagemOnboarding"
@@ -37,4 +40,8 @@
         android:id="@+id/loginFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.LoginFragment"
         android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.chatbot.ChatBotFragment"
+        android:label="ChatBotFragment" />
 </navigation>

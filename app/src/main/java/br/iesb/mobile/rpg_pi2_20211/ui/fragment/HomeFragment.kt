@@ -43,4 +43,9 @@ class HomeFragment : Fragment() {
     fun criarPersonagem (v: View) {
         findNavController().navigate(R.id.action_homeFragment_to_criarPersonagemOnboarding)
     }
+
+    fun chatBot(v:View){
+        findNavController().navigate(R.id.action_homeFragment_to_chatBotFragment)
+
+    }
 }

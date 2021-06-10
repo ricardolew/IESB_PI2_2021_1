@@ -7,7 +7,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class RpgApiInteractor @Inject constructor(
-    private val repository: RpgApiRepository,
+
     private val repo: RpgApiRepository
 ) {
 
@@ -24,7 +24,7 @@ class RpgApiInteractor @Inject constructor(
     }
 
     suspend fun loadData() : Response<List<Jogador>> {
-        return repository.loadData()
+        return repo.loadData()
     }
 
     suspend fun createuser (classe:Int, Nome: String?, Elemento: String?){

@@ -27,9 +27,6 @@
 
         <item name="subtitleStyle">@style/Widget.SubTitle1</item>
 
-        <item name="popupMenuStyle">@style/PopupMenu</item>
-
-
 
         <item name="viewPagerDotsStyle">@style/Widget.ViewPageIndicator</item>
 
