@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -23,13 +25,18 @@ import java.util.*
 
 
 @AndroidEntryPoint
-class ChatBotFragment : Fragment() {
+class ChatBotFragment : DialogFragment() {
 
     private lateinit var binding: FragmentChatBotBinding
     private val Viewmodel: ChatViewModel by viewModels()
 
     val sessionId= UUID.randomUUID().toString()
     var mensagem = MutableLiveData<String?>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(DialogFragment.STYLE_NORMAL,android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +47,8 @@ class ChatBotFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.fragment=this
         binding.viewmodel = Viewmodel
+
+
 
         setupListeners()
         setupRecyclerView()

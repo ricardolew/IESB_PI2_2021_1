@@ -20,8 +20,10 @@ class AppActivity : AppCompatActivity() {
 
 
         ibChat.setOnClickListener{
-            getSupportFragmentManager().beginTransaction().replace(R.id.appNavigationFragment, ChatBotFragment()).commit()
+//            getSupportFragmentManager().beginTransaction().replace(R.id.appNavigationFragment, ChatBotFragment()).commit()
 //            val intent = Intent (this, ChatBotFragment()::class.java)
+            ChatBotFragment().show(supportFragmentManager,"ChatBot")
+
 //            this.startActivity(intent)
         }
 
