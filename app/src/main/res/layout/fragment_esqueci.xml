@@ -17,34 +17,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg2">
 
-        <ImageView
-            android:id="@+id/ivEsqueciLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/etEmailForgot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/lohengrin"
-            android:hint="@string/hint_cadastro_email"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.2"
-            android:text="@={viewmodel.email}"
-            android:textColorHint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/btEnviarEmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivEsqueciLogo" />
-
-<!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
 <!--            android:id="@+id/textInputLayout"-->
 <!--            android:layout_width="0dp"-->
 <!--            android:layout_height="wrap_content"-->
@@ -67,6 +41,52 @@
 <!--                android:textColorHint="@color/white" />-->
 
 <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <EditText
+            android:id="@+id/etEmailForgot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/lohengrin"
+            android:hint="@string/hint_cadastro_email"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="0.2"
+            android:text="@={viewmodel.email}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/btEnviarEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNome2"
+            app:layout_constraintVertical_bias="0.498" />
+
+        <TextView
+            android:id="@+id/tvNome2"
+            style="?nomeStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:text="@string/nome"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="282dp"
+            android:layout_height="168dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNome2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/paredemedieval1" />
 
         <Button
             android:id="@+id/btEnviarEmail"

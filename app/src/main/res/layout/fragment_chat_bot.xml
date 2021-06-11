@@ -10,9 +10,11 @@
             name="viewmodel"
             type="br.iesb.mobile.rpg_pi2_20211.viewmodel.ChatViewModel" />
     </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg2"
         tools:context=".ui.MainActivity">
 
 
@@ -21,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:background="@color/brand_dark_gray_2"
             android:orientation="horizontal">
 
             <EditText
@@ -53,20 +56,18 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_messages"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="410dp"
+            android:layout_height="673dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="64dp"
-            android:background="@drawable/bg2"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="59dp"
+            android:background="@android:color/transparent"
             tools:itemCount="20"
             tools:listitem="@layout/item_mensagem" />
 
-        <View
-            android:id="@+id/dark_divider"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/marromPaleta" />
-
-
+        <!--        android:layout_below="@+id/dark_divider"-->
     </RelativeLayout>
 </layout>

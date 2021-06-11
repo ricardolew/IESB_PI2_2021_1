@@ -49,7 +49,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="400dp"
-            android:text="Not another RPG"
+            android:text="@string/nome"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/WormDotsIndicator"
             app:layout_constraintEnd_toEndOf="parent"

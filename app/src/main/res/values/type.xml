@@ -27,11 +27,11 @@
     </style>
 
     <style name="NomeApp">
-        <item name="android:textStyle">normal</item>
-        <item name="fontFamily">@font/gomarice_omotenashi_2</item>
-        <item name="android:fontFamily">@font/gomarice_omotenashi_2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/lohengrin</item>
+        <item name="android:fontFamily">@font/lohengrin</item>
         <item name="android:letterSpacing">0.01</item>
-        <item name="android:textSize">32dp</item>
+        <item name="android:textSize">45dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textAlignment">center</item>
 

@@ -78,7 +78,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
 
             map.setOnMarkerClickListener {
-                findNavController().navigate(R.id.action_mapFragment_to_personagemFragment)
+                findNavController().navigate(R.id.action_mapFragment_to_batalhaFragment)
                 return@setOnMarkerClickListener true
             }
 
@@ -97,8 +97,5 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
 }
 
-fun teste(){
-
-}
 
 

@@ -40,6 +40,10 @@ class HomeFragment : Fragment() {
 
     }
 
+    fun start(v:View){
+        findNavController().navigate(R.id.action_homeFragment_to_personagemFragment)
+    }
+
     fun criarPersonagem (v: View) {
         findNavController().navigate(R.id.action_homeFragment_to_criarPersonagemOnboarding)
     }
@@ -49,8 +53,5 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun map(v:View){
-        findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
 
-    }
 }

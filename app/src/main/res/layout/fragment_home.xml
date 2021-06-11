@@ -13,15 +13,32 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg2">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvNome2"
+            style="?nomeStyle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="180dp"
+            android:text="@string/nome"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="282dp"
+            android:layout_height="168dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNome2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/paredemedieval1" />
+
 
         <Button
             android:id="@+id/btPersonagem1"
@@ -31,11 +48,14 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
+            android:onClick="@{fragmentHome::start}"
             android:text="nome"
             app:layout_constraintBottom_toTopOf="@+id/btPersonagem2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNome2"
+            app:layout_constraintVertical_bias="0.911" />
 
         <Button
             android:id="@+id/btPersonagem2"
@@ -70,36 +90,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5" />
-
-        <Button
-            android:id="@+id/btChatBot"
-            style="?primaryButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="100dp"
-            android:text="Chat Bot"
-            android:onClick="@{fragmentHome::chatBot}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btn_send"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/amareloInicio"
-            android:onClick="@{fragmentHome::map}"
-            android:text="Map"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
