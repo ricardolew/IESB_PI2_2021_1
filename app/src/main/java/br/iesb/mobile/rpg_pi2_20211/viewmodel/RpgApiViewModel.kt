@@ -3,14 +3,22 @@ package br.iesb.mobile.rpg_pi2_20211.viewmodel
 import android.app.Application
 import android.telecom.Call
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
+import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
+import br.iesb.mobile.rpg_pi2_20211.domain.LoginResult
 import br.iesb.mobile.rpg_pi2_20211.interactor.RpgApiInteractor
+import br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.math.log
 
 
 @HiltViewModel
@@ -21,46 +29,58 @@ class RpgApiViewModel @Inject constructor(
 
     val nome = MutableLiveData<String>()
 //    var elemento = MutableLiveData<String>()
-     var elemento : String = ""
+    var elemento : String = ""
+    var item: String = ""
+
+    var opcao: String = ""
+    var acao: String = ""
+
+    var result = ""
 
 
 
 
-    fun loadData() {
-        viewModelScope.launch {
-            val characters = interactor.loadData()
-//                Log.d("RPG_TESTE", "${characters}")
-            characters.body()?.forEach() { c ->
-                var classeS: String = ""
-                if (c.classe == 1) {
-                    classeS = "Arqueiro"
-                } else if (c.classe == 2) {
-                    classeS = "Guerreiro"
-                } else if (c.classe == 3) {
-                    classeS = "Mago"
-                }
-                var elementoS: String = ""
-                if (c.elemento == 1) {
-                    elementoS = "Agua"
-                } else if (c.elemento == 2) {
-                    elementoS = "Fogo"
-                } else if (c.elemento == 3) {
-                    elementoS = "Ar"
-                } else if (c.elemento == 4) {
-                    elementoS = "Terra"
-                }
-
-                Log.d("deee", "Nome: ${c.nome} - Classe: ${classeS} - Elemento: ${elementoS}")
-            }
-            Log.d("deee", "Json " + characters.body().toString())
-        }
-    }
 
     fun createUser(classe: Int) {
         viewModelScope.launch {
             println("vm create")
-           val id = interactor.createuser(classe,nome.value,elemento)
-            println(id)
+           var id = interactor.createuser(classe,nome.value,elemento)
+            Log.d("CREATE", id.toString())
         }
+    }
+
+    fun batalha(button: Int){
+
+//        val button = v.id
+
+        var retorno = 0
+
+
+        viewModelScope.launch {
+            if (button == 4){
+                findNavController().popBackStack()
+            }
+            val log = interactor.batalha(button)
+            Log.d("BATALHA", log.toString())
+
+        }
+    }
+
+    fun batalhaChefe(button: Int){
+
+        viewModelScope.launch {
+            result = interactor.batalhaChefe(button).toString()
+
+        }
+
+    }
+
+    fun taverna(){
+
+        viewModelScope.launch {
+           val log = interactor.taverna(item)
+            Log.d("TAVERNA", log)
+        }
+
     }
 }

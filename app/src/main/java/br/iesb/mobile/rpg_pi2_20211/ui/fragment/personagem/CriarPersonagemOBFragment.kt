@@ -1,28 +1,21 @@
 package br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem
 
 import android.os.Bundle
+import android.util.Log
+import android.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.PopupMenu
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentCriarPersonagemOnboardingBinding
-import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentOnboardingBinding
-import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.AdaptadorVP
-import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingFirstFragment
-import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingSecondFragment
-import br.iesb.mobile.rpg_pi2_20211.ui.fragment.onboarding.screen.OnboardingThirdFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarFirstFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarSecondFragment
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarThirdFragment
@@ -81,16 +74,17 @@ class CriarPersonagemOnboarding : Fragment() {
 
         val popup = PopupMenu(activity,btElmento)
 
-        popup.inflate(R.menu.teste)
+        popup.inflate(R.menu.popup)
+        
 
         popup.setOnMenuItemClickListener {
             val item = it.title.toString()
             viewmodel.elemento = item
             Toast.makeText(activity, "Item: " +it.title, Toast.LENGTH_SHORT).show()
             true
-
         }
         popup.show()
+
     }
 
     @SuppressWarnings

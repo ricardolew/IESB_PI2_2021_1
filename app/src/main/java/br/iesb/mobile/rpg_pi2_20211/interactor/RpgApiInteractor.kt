@@ -7,6 +7,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject
+import kotlin.time.measureTime
 
 class RpgApiInteractor @Inject constructor(
 
@@ -20,21 +21,43 @@ class RpgApiInteractor @Inject constructor(
             el = 1
         }else if (elemento.toString() == "Fogo"){
             el = 2
+        }else if (elemento.toString() == "Natureza"){
+            el=3
+        }else if(elemento.toString() == "Ordem"){
+            el=4
+        }else if(elemento.toString() == "Caos"){
+            el=5
+        }else if(elemento.toString() == "Cura"){
+            el=6
         }
 
         return el
     }
 
-    suspend fun loadData() : Response<List<Jogador>> {
-        return repo.loadData()
-    }
 
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?){
+
+
+
+    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?): Int{
         val el = elementotoInt(Elemento)
         println("interactor Create")
-        repo.createuser(classe, Nome, el)
+        var id = repo.createuser(classe, Nome, el)
+        return id
 
+    }
 
+    suspend fun batalha(opcao: Int): Call<String> {
+        var Log = repo.batalha(opcao)
+        return Log
+    }
+    suspend fun batalhaChefe(opcao: Int): Call<String> {
+        var Log = repo.batalhaChefe(opcao)
+        return Log
+    }
 
+    suspend fun taverna(item: String): String{
+        var log = repo.taverna(item)
+
+         return log
     }
 }

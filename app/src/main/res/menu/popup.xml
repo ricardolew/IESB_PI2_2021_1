@@ -4,15 +4,24 @@
 
     <item
         android:id="@+id/menu1"
-        android:title="Água" />
+        android:title="Água"
+        android:icon="@drawable/gotas"/>
+
     <item android:title="Fogo"
     android:id="@+id/menu2"/>
+
     <item android:title="Natureza"
         android:id="@+id/menu3"/>
-    <item android:title="Luz"
+
+    <item android:title="Ordem"
         android:id="@+id/menu4"/>
-    <item android:title="Escuridao"
+
+    <item android:title="Caos"
         android:id="@+id/menu5" />
+
+    <item android:title="Cura"
+        android:id="@+id/menu6" />
+
 
 
 </menu>

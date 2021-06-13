@@ -5,24 +5,26 @@
     <data>
         <variable
             name="fragment"
-            type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaSecondFragment" />
+            type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaFourthFragment" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout4"
+        android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.batalha.BatalhaSecondFragment" >
+        tools:context=".ui.fragment.batalha.BatalhaFirstFragment" >
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="336dp"
-            android:layout_height="493dp"
-            android:src="@drawable/monstrosla"
+            android:id="@+id/imageView8"
+            android:layout_width="303dp"
+            android:layout_height="495dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/slime"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.69" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

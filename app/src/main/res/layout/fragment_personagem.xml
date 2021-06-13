@@ -6,6 +6,12 @@
         <variable
             name="fragmentPersonagem"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.PersonagemFragment" />
+
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
+
+
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,8 +26,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
-            android:text="Explorar"
-            android:onClick="@{fragmentPersonagem::map}"
+            android:text="Deletar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -35,7 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:text="Taverna"
+            android:text="Explorar"
+            android:onClick="@{fragmentPersonagem::map}"
             app:layout_constraintBottom_toTopOf="@+id/btCharMap"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -49,10 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:text="Inventário"
+            android:text="Taverna"
+            android:onClick="@{fragmentPersonagem::PopUpLoja}"
             app:layout_constraintBottom_toTopOf="@+id/btCharTaverna"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btCharSpells" />
 

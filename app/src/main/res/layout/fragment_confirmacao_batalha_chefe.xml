@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="fragment"
+            type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.ConfirmacaoBatalhaChefeFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        tools:context=".ui.fragment.batalha.ConfirmacaoBatalhaChefeFragment">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="610dp"
+            android:layout_height="1013dp"
+            android:background="@drawable/bg2"
+            android:onClick="@{fragment::batalhachefe}"
+            android:src="@drawable/alert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAlerta"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.VoltarButton"
+            android:layout_width="215dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="232dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{fragment::batalhachefe}"
+            android:text="ATENÇÃO!! "
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView9"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvInicioubatalha"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.SecondaryButton"
+            android:layout_width="279dp"
+            android:layout_height="81dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{fragment::batalhachefe}"
+            android:text="O chefe está se aproximando!"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvIniciar"
+            app:layout_constraintEnd_toEndOf="@+id/imageView9"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlerta"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvIniciar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.SecondaryButton"
+            android:layout_width="359dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="300dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{fragment::batalhachefe}"
+            android:text="INICIAR BATALHA"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView9"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/imageView9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

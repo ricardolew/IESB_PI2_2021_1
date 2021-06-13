@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="fragment"
+            type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaChefeFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.batalha.BatalhaChefeFragment" >
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="510dp"
+            android:layout_height="874dp"
+            android:src="@drawable/boss"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibDefender"
+            android:layout_width="175dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/defender"
+            android:onClick="@{() -> fragment.batalhaChefe(2)}"
+
+            app:layout_constraintBottom_toTopOf="@+id/ibRun"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/ibAttack"
+            android:layout_width="175dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/atack"
+            android:onClick="@{() -> fragment.batalhaChefe(1)}"
+            app:layout_constraintBottom_toTopOf="@+id/ibMagic"
+            app:layout_constraintEnd_toStartOf="@+id/ibDefender"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/ibMagic"
+            android:layout_width="175dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="122dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/magic"
+            android:onClick="@{() -> viewmodel.batalhaChefe(3)}"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ibRun"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+
+        <ImageButton
+            android:id="@+id/ibRun"
+            android:layout_width="175dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="122dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/exit"
+            android:onClick="@{() -> viewmodel.batalhaChefe(4)}"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvAtacar"
+            style="@style/Textbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Ataque"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ibAttack"
+            app:layout_constraintEnd_toEndOf="@+id/ibAttack"
+            app:layout_constraintStart_toStartOf="@+id/ibAttack"
+            app:layout_constraintTop_toTopOf="@+id/ibAttack" />
+
+        <TextView
+            android:id="@+id/tvDefender"
+            style="@style/Textbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Defesa"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ibDefender"
+            app:layout_constraintEnd_toEndOf="@+id/ibDefender"
+            app:layout_constraintStart_toStartOf="@+id/ibDefender"
+            app:layout_constraintTop_toTopOf="@+id/ibDefender" />
+
+        <TextView
+            android:id="@+id/tvMagia"
+            style="@style/Textbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Magia"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ibMagic"
+            app:layout_constraintEnd_toEndOf="@+id/ibMagic"
+            app:layout_constraintStart_toStartOf="@+id/ibMagic"
+            app:layout_constraintTop_toTopOf="@+id/ibMagic" />
+
+        <TextView
+            android:id="@+id/tvFugir"
+            style="@style/Textbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Fugir"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ibRun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ibRun"
+            app:layout_constraintTop_toTopOf="@+id/ibRun" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

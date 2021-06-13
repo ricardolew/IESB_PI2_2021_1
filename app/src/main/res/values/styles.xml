@@ -70,8 +70,10 @@
 
         <item name="android:navigationBarColor">#E4E4E4</item>
         <item name="android:windowLightNavigationBar">true</item>
+    </style>
 
-
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">#000000</item>
     </style>
 
 

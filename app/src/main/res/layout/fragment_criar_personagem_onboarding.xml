@@ -19,17 +19,19 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg2">
 
+
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vpCriarOB"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toTopOf="@+id/WormDotsIndicator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"></androidx.viewpager2.widget.ViewPager2>
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.viewpager2.widget.ViewPager2>
 
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/WormDotsIndicator"
@@ -38,41 +40,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="25dp"
             app:dotsColor="#dc9c0c"
             app:dotsCornerRadius="8dp"
             app:dotsSize="8dp"
             app:dotsSpacing="4dp"
+
             app:dotsStrokeColor="#94780c"
             app:dotsStrokeWidth="2dp"
-            app:layout_constraintBottom_toTopOf="@+id/tiNomePersonagem"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiNomePersonagem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="350dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/nome_hint"
-                android:inputType="textEmailAddress"
-                android:text="@={viewmodel.nome}" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
+        </com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator>
 
         <Button
             android:id="@+id/btEntrar"
@@ -80,16 +60,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
             android:onClick="@{fragment::start}"
             android:text="Confirmar"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btCad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+            app:layout_constraintTop_toBottomOf="@+id/btElmento" />
 
         <Button
             android:id="@+id/btCad"
@@ -97,15 +76,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="41dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="36dp"
             android:onClick="@{fragment::back}"
             android:text="Voltar"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btEntrar" />
 
         <Button
             android:id="@+id/btElmento"
@@ -113,20 +92,49 @@
             android:layout_width="0dp"
             android:layout_height="67dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:onClick="@{fragment::PopUpElement}"
             android:text="@string/elemento_hint"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiNomePersonagem" />
+            app:layout_constraintTop_toBottomOf="@+id/etEmailLogin" />
+
+        <EditText
+            android:id="@+id/etEmailLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:fontFamily="@font/lohengrin"
+            android:hint="Nome do personagem"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="0.4"
+            android:text="@={viewmodel.nome}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WormDotsIndicator" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="515dp" />
+            app:layout_constraintGuide_begin="306dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
 
 
         <!--        <Button-->

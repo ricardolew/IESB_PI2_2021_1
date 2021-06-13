@@ -46,50 +46,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="156dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="@{fragmentHome::start}"
-            android:text="nome"
-            app:layout_constraintBottom_toTopOf="@+id/btPersonagem2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNome2"
-            app:layout_constraintVertical_bias="0.911" />
-
-        <Button
-            android:id="@+id/btPersonagem2"
-            style="?primaryButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Personagem 2"
             android:onClick="@{fragmentHome::criarPersonagem}"
+            android:text="Criar personagem"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-        <Button
-            android:id="@+id/btPersonagem3"
-            style="?primaryButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Personagem 3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btPersonagem2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNome2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

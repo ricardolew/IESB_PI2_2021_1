@@ -6,6 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.iesb.mobile.rpg_pi2_20211.domain.LoginResult
 import br.iesb.mobile.rpg_pi2_20211.repository.LoginInteractor
+import br.iesb.mobile.rpg_pi2_20211.repository.RpgApiRepository
+import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
         app: Application,
-        private val interactor: LoginInteractor
+        private val interactor: LoginInteractor,
+//        private val repo: RpgApiRepository
 ) : AndroidViewModel(app) {
 
     val email = MutableLiveData<String>()
@@ -25,6 +28,7 @@ class LoginViewModel @Inject constructor(
     fun login() {
         viewModelScope.launch {
             result.value = interactor.login(email.value,password.value)
+//            repo.email = email.value
 
             }
         }
@@ -45,38 +49,4 @@ class LoginViewModel @Inject constructor(
     }
 
 
-//        viewModelScope.launch {
-//            try {
-//                result.value = interactor.login(email.value, password.value)
-//            } catch (t: Throwable) {
-//                Log.d("RPG", "[LOGIN] Error on login: ${t.localizedMessage}")
-//                result.value = t.localizedMessage
-//            }
-//        }
-//
-
-
-
-
-//    fun signup() {
-//        viewModelScope.launch {
-//            try {
-//                result.value = interactor.signup(email.value, password.value)
-//            } catch (t: Throwable) {
-//                Log.d("RPG", "[LOGIN] Error on signup: ${t.localizedMessage}")
-//                result.value = t.localizedMessage
-//            }
-//        }
-//    }
-//
-//    fun forgot() {
-//        viewModelScope.launch {
-//            try {
-//                result.value = interactor.forgot(email.value)
-//            } catch (t: Throwable) {
-//                Log.d("RPG", "[LOGIN] Error on forgot password: ${t.localizedMessage}")
-//                result.value = t.localizedMessage
-//            }
-//        }
-//    }
 

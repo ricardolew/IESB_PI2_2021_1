@@ -20,9 +20,6 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_personagemFragment"
-            app:destination="@id/personagemFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_criarPersonagemOnboarding"
             app:destination="@id/criarPersonagemOnboarding" />
         <action
@@ -49,9 +46,27 @@
         <action
             android:id="@+id/action_mapFragment_to_batalhaFragment"
             app:destination="@id/batalhaFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_confirmacaoBatalhaChefeFragment"
+            app:destination="@id/confirmacaoBatalhaChefeFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_batalhaChefeFragment"
+            app:destination="@id/batalhaChefeFragment" />
     </fragment>
     <fragment
         android:id="@+id/batalhaFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaFragment"
         android:label="BatalhaFragment" />
+    <dialog
+        android:id="@+id/confirmacaoBatalhaChefeFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.ConfirmacaoBatalhaChefeFragment"
+        android:label="ConfirmacaoBatalhaChefeFragment" >
+        <action
+            android:id="@+id/action_confirmacaoBatalhaChefeFragment_to_batalhaChefeFragment"
+            app:destination="@id/batalhaChefeFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/batalhaChefeFragment"
+        android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaChefeFragment"
+        android:label="BatalhaChefeFragment" />
 </navigation>

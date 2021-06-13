@@ -48,6 +48,7 @@
             style="?nomeStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="400dp"
             android:text="@string/nome"
             android:textAlignment="center"
@@ -65,7 +66,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logosplash" />
+            app:srcCompat="@drawable/paredemedieval1" />
 
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/WormDotsIndicator"

@@ -6,6 +6,11 @@
         <variable
             name="fragment"
             type="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaFragment" />
+        <variable
+            name="viewmodel"
+            type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
+        <import type="android.view.View" />
+
     </data>
         <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"
@@ -16,12 +21,14 @@
 
             <ImageButton
                 android:id="@+id/ibDefender"
+                android:tag="1"
                 android:layout_width="175dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="56dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="24dp"
                 android:scaleType="centerCrop"
+                android:onClick="@{() -> fragment.batalha(1)}"
                 android:src="@drawable/defender"
                 app:layout_constraintBottom_toTopOf="@+id/ibRun"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +45,7 @@
                 android:layout_marginBottom="24dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/atack"
+                android:onClick="@{() -> fragment.batalha(2)}"
                 app:layout_constraintBottom_toTopOf="@+id/ibMagic"
                 app:layout_constraintEnd_toStartOf="@+id/ibDefender"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +62,7 @@
                 android:layout_marginBottom="32dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/magic"
+                android:onClick="@{() -> fragment.batalha(3)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ibRun"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +77,7 @@
                 android:layout_marginBottom="32dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/exit"
+                android:onClick="@{() -> fragment.batalha(4)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/vpBatalha" />

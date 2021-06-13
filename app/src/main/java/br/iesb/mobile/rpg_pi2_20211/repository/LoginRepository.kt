@@ -2,15 +2,18 @@ package br.iesb.mobile.rpg_pi2_20211.repository
 
 import android.content.Context
 import br.iesb.mobile.rpg_pi2_20211.R
+import br.iesb.mobile.rpg_pi2_20211.di.RpgApiService
+import br.iesb.mobile.rpg_pi2_20211.domain.Email
 import br.iesb.mobile.rpg_pi2_20211.domain.LoginResult
 
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
-import java.lang.Exception
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
@@ -18,7 +21,9 @@ import kotlin.coroutines.suspendCoroutine
 
 class LoginRepository @Inject constructor(
         private val auth: FirebaseAuth,
-        @ApplicationContext val context: Context
+        @ApplicationContext val context: Context,
+        private val request: RpgApiService,
+
 ) {
 
     private fun parseResultError(e: Throwable?): LoginResult.Error {
@@ -40,12 +45,15 @@ class LoginRepository @Inject constructor(
         val operation = auth.signInWithEmailAndPassword(email, pass)
         operation.addOnCompleteListener { op ->
             val res = if (op.isSuccessful) {
+
                 LoginResult.Success()
+
             } else {
                 parseResultError(op.exception)
             }
             nextStep.resume(res)
         }
+
     }
 
 //    suspend fun login(email: String, pass:String): String = suspendCoroutine { nextStep ->
