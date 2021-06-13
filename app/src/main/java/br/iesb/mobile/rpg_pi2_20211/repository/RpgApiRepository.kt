@@ -29,7 +29,7 @@ class RpgApiRepository @Inject constructor(
 
 ) {
 
-    var id: Int = -1
+    var id: String = ""
 
 
 
@@ -39,7 +39,7 @@ class RpgApiRepository @Inject constructor(
 
 
 
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: Int):Int{
+    suspend fun createuser (classe:Int, Nome: String?, Elemento: Int):String{
         println( "Repo create")
 
         val NewPlayer = Jogador(classe,Nome,Elemento,email)
@@ -65,13 +65,18 @@ class RpgApiRepository @Inject constructor(
         return Log
     }
 
-    suspend fun taverna(item: String): String{
+    suspend fun taverna(item: String): Call<String> {
         var Id = request.getID(email)
 
         var log = request.taverna(Id,item)
 
         return log
 
+    }
+
+    suspend fun trocaElm(elm: Int){
+        var Id = request.getID(email)
+        request.trocaelemento(Id, elm)
     }
 
 

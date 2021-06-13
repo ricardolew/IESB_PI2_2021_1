@@ -56,7 +56,11 @@
     <fragment
         android:id="@+id/batalhaFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.BatalhaFragment"
-        android:label="BatalhaFragment" />
+        android:label="BatalhaFragment" >
+        <action
+            android:id="@+id/action_batalhaFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
     <dialog
         android:id="@+id/confirmacaoBatalhaChefeFragment"
         android:name="br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.ConfirmacaoBatalhaChefeFragment"

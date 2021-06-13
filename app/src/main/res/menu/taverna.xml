@@ -3,9 +3,9 @@
 
     <item
         android:id="@+id/menu1"
-        android:title="Vida" />
+        android:title="vida" />
 
-    <item android:title="Mana"
+    <item android:title="mana"
         android:id="@+id/menu2"/>
     
 </menu>

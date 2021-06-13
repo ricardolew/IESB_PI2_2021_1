@@ -12,8 +12,10 @@ import androidx.navigation.fragment.findNavController
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentPersonagemBinding
 import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_personagem.*
 
+@AndroidEntryPoint
 class PersonagemFragment : Fragment() {
 
     private lateinit var binding: FragmentPersonagemBinding
@@ -29,7 +31,7 @@ class PersonagemFragment : Fragment() {
         binding = FragmentPersonagemBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.fragmentPersonagem = this
-//        binding.viewmodel = viewmodel
+        binding.viewmodel=viewmodel
 
         return binding.root
     }
@@ -51,11 +53,42 @@ class PersonagemFragment : Fragment() {
         popup.setOnMenuItemClickListener {
             val item = it.title.toString()
             viewmodel.item = item
+            viewmodel.taverna()
             Toast.makeText(activity, "Item: " +it.title, Toast.LENGTH_SHORT).show()
             true
         }
         popup.show()
 
+    }
+
+    fun PopUpTrocaEl(v:View){
+
+        val popup = PopupMenu(activity,btCharSpells)
+
+        popup.inflate(R.menu.trocaelemento)
+
+
+        popup.setOnMenuItemClickListener {
+            val item = it.title.toString()
+            if(item == "Água"){
+                viewmodel.elm = 1
+            }else if (item == "Fogo"){
+                viewmodel.elm = 2
+            }else if (item == "Natureza"){
+                viewmodel.elm=3
+            }else if(item == "Ordem"){
+                viewmodel.elm=4
+            }else if(item == "Caos"){
+                viewmodel.elm=5
+            }else if(item == "Cura"){
+                viewmodel.elm=6
+            }
+
+            viewmodel.trocaElemento()
+            Toast.makeText(activity, "Item: " +it.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        popup.show()
     }
 
 

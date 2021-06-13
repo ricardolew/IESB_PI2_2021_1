@@ -34,16 +34,11 @@ class RpgApiInteractor @Inject constructor(
         return el
     }
 
-
-
-
-
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?): Int{
+    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?): String{
         val el = elementotoInt(Elemento)
         println("interactor Create")
         var id = repo.createuser(classe, Nome, el)
         return id
-
     }
 
     suspend fun batalha(opcao: Int): Call<String> {
@@ -55,9 +50,13 @@ class RpgApiInteractor @Inject constructor(
         return Log
     }
 
-    suspend fun taverna(item: String): String{
+    suspend fun taverna(item: String): Call<String> {
         var log = repo.taverna(item)
 
          return log
+    }
+
+    suspend fun trocaElm(elm: Int){
+        repo.trocaElm(elm)
     }
 }

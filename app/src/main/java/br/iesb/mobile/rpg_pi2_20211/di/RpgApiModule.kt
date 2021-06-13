@@ -41,19 +41,25 @@ class RpgApiModule {
 interface RpgApiService {
     @GET("jogadores/user/{email}")
     @Headers("Content-Type: application/json")
-    suspend fun getID(@Path("email") email: String?): Int
+    suspend fun getID(@Path("email") email: String?)
 
     @Headers("Content-Type: application/json")
     @POST("jogador/criarjogador")
-    suspend fun addplayer(@Body body: Jogador) : Int
+    suspend fun addplayer(@Body body: Jogador)
 
     @Headers("Content-Type: application/json")
-    @POST("/loja/{idURL}/{opcao}")
-    suspend fun taverna(@Query("idURL") idURL: Int, @Query("opcao") opcao: String): String
+    @POST("loja/{idURL}/{opcao}")
+    suspend fun taverna(@Path("idURL") idURL: String, @Path("opcao") opcao: String): Call<String>
 
     @Headers("Content-Type: application/json")
     @GET("batalha/{n}/{idURL}/{op}")
-    fun batalha(@Path("n") n: Int, @Path("idURL") id: Int, @Path("op") op:Int): Call<String>
+    fun batalha(@Path("n") n: Int, @Path("idURL") id: String, @Path("op") op:Int): Call<String>
+
+    @Headers("Content-Type: application/json")
+    @GET("elemento/{idURL}/{elm}")
+    fun trocaelemento( @Path("idURL") id: String, @Path("elm") elm:Int)
+
+
 
 
 

@@ -31,13 +31,11 @@ class RpgApiViewModel @Inject constructor(
 //    var elemento = MutableLiveData<String>()
     var elemento : String = ""
     var item: String = ""
+    var elm: Int = -1
 
-    var opcao: String = ""
     var acao: String = ""
 
     var result = ""
-
-
 
 
 
@@ -50,24 +48,19 @@ class RpgApiViewModel @Inject constructor(
     }
 
     fun batalha(button: Int){
-
-//        val button = v.id
-
-        var retorno = 0
-
-
         viewModelScope.launch {
-            if (button == 4){
-                findNavController().popBackStack()
-            }
-            val log = interactor.batalha(button)
-            Log.d("BATALHA", log.toString())
+
+//            if (button == 4){
+//                findNavController().navigate(R.id.action_batalhaFragment_to_mapFragment)
+//            }
+            result = interactor.batalha(button).toString()
+
+            Log.d("BATALHA", result)
 
         }
     }
 
     fun batalhaChefe(button: Int){
-
         viewModelScope.launch {
             result = interactor.batalhaChefe(button).toString()
 
@@ -79,7 +72,16 @@ class RpgApiViewModel @Inject constructor(
 
         viewModelScope.launch {
            val log = interactor.taverna(item)
-            Log.d("TAVERNA", log)
+            Log.d("TAVERNA", log.toString())
+            BatalhaFragment().taverna(log.toString())
+        }
+
+    }
+
+    fun trocaElemento(){
+
+        viewModelScope.launch {
+            interactor.trocaElm(elm)
         }
 
     }
