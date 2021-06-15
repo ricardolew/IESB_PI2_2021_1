@@ -1,8 +1,6 @@
 package br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem
 
 import android.os.Bundle
-import android.util.Log
-import android.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -99,9 +97,11 @@ class CriarPersonagemOnboarding : Fragment() {
         else if (tvCriar.text.toString() == "Mago") {
             classe = 3
         }
+        val id = viewmodel.createUser(classe)
 
-        viewmodel.createUser(classe)
+        Toast.makeText(context,id , Toast.LENGTH_LONG).show()
         println("Nav")
+
         findNavController().navigate(R.id.action_criarPersonagemOnboarding_to_personagemFragment)
     }
 

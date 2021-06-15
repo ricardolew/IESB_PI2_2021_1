@@ -71,7 +71,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.SecondaryButton"
             android:layout_width="359dp"
             android:layout_height="78dp"
-            android:layout_marginBottom="300dp"
+            android:layout_marginBottom="296dp"
             android:background="@android:color/transparent"
             android:onClick="@{fragment::batalhachefe}"
             android:text="INICIAR BATALHA"

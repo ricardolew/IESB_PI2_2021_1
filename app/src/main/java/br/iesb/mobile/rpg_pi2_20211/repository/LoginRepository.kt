@@ -1,19 +1,14 @@
 package br.iesb.mobile.rpg_pi2_20211.repository
 
+
 import android.content.Context
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.di.RpgApiService
-import br.iesb.mobile.rpg_pi2_20211.domain.Email
 import br.iesb.mobile.rpg_pi2_20211.domain.LoginResult
-
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

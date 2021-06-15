@@ -23,6 +23,7 @@ import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarSecondFra
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.personagem.screen.CriarThirdFragment
 import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
@@ -42,7 +43,6 @@ class BatalhaFragment : Fragment() {
 
         var listaFragmentos = listOf<Fragment>()
         var batalha = (1..4).random()
-
 
 
         if(batalha == 1) {
@@ -76,32 +76,80 @@ class BatalhaFragment : Fragment() {
         binding.viewmodel = viewmodel
 
 
+        viewmodel.lobBatalha.observe(viewLifecycleOwner){
 
+            Toast.makeText(context, it.mensagemInicio, Toast.LENGTH_LONG).show()
 
+            if(it.mensagemFugir != ""){
+                Toast.makeText(context, it.mensagemFugir , Toast.LENGTH_LONG).show()
+                findNavController().popBackStack()
+            }else{
+                if(it.mensagemFim != "") {
+                    if (it.mensagemVitoria!="") {
+                        Toast.makeText(
+                            context,
+                            it.mensagemVitoria + it.mensagemTurnoJogador + it.mensagemTurnoMonstro,
+                            Toast.LENGTH_LONG
+                        ).show()
+                        findNavController().popBackStack()
+                    }
+                    if(it.mensagemDerrota !=""){
+                        Toast.makeText(
+                            context,
+                            it.mensagemDerrota + it.mensagemTurnoJogador + it.mensagemTurnoMonstro,
+                            Toast.LENGTH_LONG
+                        ).show()
+                        findNavController().popBackStack()
+                    }
+                }
+                Toast.makeText(context, it.mensagemTurnoJogador+it.mensagemTurnoMonstro , Toast.LENGTH_LONG).show()
+
+            }
+        }
 
         return binding.root
     }
 
-    fun batalha(button: Int){
-
-//        val button = v.id
-        viewmodel.batalha(button)
-
-        val log = viewmodel.result
-        Toast.makeText(context, log, Toast.LENGTH_LONG).show()
-        Log.d("BATALHA", log)
-
+//    fun batalha(button: Int){
+//
+////        val button = v.id
+//        GlobalScope.launch{
+//            var log  = viewmodel.batalha(button)
+//            if(button == 4){
+//                Toast.makeText(context, log.mensagemFugir, Toast.LENGTH_LONG).show()
+//                findNavController().popBackStack()
+//            }else{
+//                if(log.mensagemFim != "") {
+//                    if (log.mensagemVitoria!="") {
+//                        Toast.makeText(
+//                            context,
+//                            log.mensagemVitoria + log.mensagemTurnoJogador + log.mensagemTurnoMonstro,
+//                            Toast.LENGTH_LONG
+//                        ).show()
+//                    }
+//                    if(log.mensagemDerrota !=""){
+//                        Toast.makeText(
+//                            context,
+//                            log.mensagemDerrota + log.mensagemTurnoJogador + log.mensagemTurnoMonstro,
+//                            Toast.LENGTH_LONG
+//                        ).show()
+//                    }
+//                }
+//                Toast.makeText(context, log.mensagemTurnoJogador+log.mensagemTurnoMonstro , Toast.LENGTH_LONG).show()
+//                findNavController().popBackStack()
+//
+//            }
         }
 
-    fun taverna (log: String){
-        Toast.makeText(context, log, Toast.LENGTH_LONG).show()
-    }
 
+//        viewmodel.batalha(button)
+//        val log = viewmodel.result
+//        Toast.makeText(context, log.value, Toast.LENGTH_LONG).show()
 
-
-
-
-    }
+//        }
+//
+//
+//    }
 
 
 

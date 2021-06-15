@@ -1,13 +1,8 @@
 package br.iesb.mobile.rpg_pi2_20211.interactor
 
-import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
-import br.iesb.mobile.rpg_pi2_20211.domain.ResultCreate
+import br.iesb.mobile.rpg_pi2_20211.domain.BatalhaDTO
 import br.iesb.mobile.rpg_pi2_20211.repository.RpgApiRepository
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Response
 import javax.inject.Inject
-import kotlin.time.measureTime
 
 class RpgApiInteractor @Inject constructor(
 
@@ -34,23 +29,37 @@ class RpgApiInteractor @Inject constructor(
         return el
     }
 
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: String?): String{
+    suspend fun getuser() : Int{
+        var ex = repo.getuser()
+        return ex
+    }
+
+    suspend fun createuser (classe: Int?, Nome: String?, Elemento: String?): String{
         val el = elementotoInt(Elemento)
         println("interactor Create")
         var id = repo.createuser(classe, Nome, el)
         return id
     }
 
-    suspend fun batalha(opcao: Int): Call<String> {
+    suspend fun nomeuser(): String?{
+
+        return repo.nomeuser()
+    }
+
+    suspend fun niveluser(): String{
+        return repo.niveluser()
+    }
+
+    suspend fun batalha(opcao: Int): BatalhaDTO {
         var Log = repo.batalha(opcao)
         return Log
     }
-    suspend fun batalhaChefe(opcao: Int): Call<String> {
+    suspend fun batalhaChefe(opcao: Int): BatalhaDTO {
         var Log = repo.batalhaChefe(opcao)
         return Log
     }
 
-    suspend fun taverna(item: String): Call<String> {
+    suspend fun taverna(item: String): Int {
         var log = repo.taverna(item)
 
          return log
@@ -58,5 +67,9 @@ class RpgApiInteractor @Inject constructor(
 
     suspend fun trocaElm(elm: Int){
         repo.trocaElm(elm)
+    }
+
+    suspend fun deletar (){
+        repo.deletar()
     }
 }

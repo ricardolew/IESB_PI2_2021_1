@@ -1,24 +1,11 @@
 package br.iesb.mobile.rpg_pi2_20211.repository
 
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
 import br.iesb.mobile.rpg_pi2_20211.di.RpgApiService
-import br.iesb.mobile.rpg_pi2_20211.domain.Email
-import br.iesb.mobile.rpg_pi2_20211.domain.Jogador
-import br.iesb.mobile.rpg_pi2_20211.domain.ResultCreate
-import br.iesb.mobile.rpg_pi2_20211.viewmodel.LoginViewModel
-import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
+import br.iesb.mobile.rpg_pi2_20211.domain.*
 import com.google.firebase.auth.FirebaseAuth
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.Response
+import java.lang.Exception
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 
 class RpgApiRepository @Inject constructor(
@@ -37,46 +24,110 @@ class RpgApiRepository @Inject constructor(
     var email: String? = auth.currentUser.email
 
 
+    suspend fun getuser():Int{
+        try {
+            val req = request.getPersonagem(email).id
+            return 1
+        }catch (e: Exception){
+            return 0
+        }
 
+    }
 
-    suspend fun createuser (classe:Int, Nome: String?, Elemento: Int):String{
+    suspend fun createuser (classe: Int?, Nome: String?, Elemento: Int):String{
         println( "Repo create")
 
-        val NewPlayer = Jogador(classe,Nome,Elemento,email)
-        println(NewPlayer.nome)
-        id = request.addplayer(NewPlayer)
+        try {
+                val NewPlayer = Jogador(classe, Nome, Elemento, email)
+                println(NewPlayer.nome)
+                id = request.addplayer(NewPlayer)
 
+
+        }catch (e: Exception){
+            id = "Você já tem um jogador"
+        }
         return id
+
+
     }
 
-    suspend fun batalha(opcao: Int): Call<String> {
-        var Id = request.getID(email)
-        var Log = request.batalha(0,Id,opcao)
+    suspend fun nomeuser(): String?{
+        var textview: Personagem? = null
+        try {
+             textview = request.getPersonagem(email)
+        }finally {
+            return textview?.nome
+        }
 
 
 
-        return Log
-    }
-    suspend fun batalhaChefe(opcao: Int): Call<String> {
-        var Id = request.getID(email)
 
-        var Log = request.batalha(1,Id,opcao)
-
-        return Log
     }
 
-    suspend fun taverna(item: String): Call<String> {
-        var Id = request.getID(email)
+    suspend fun niveluser(): String{
+        var nivel = -1
+        try {
+           nivel = request.getPersonagem(email).nivel
+        }finally {
+            return "Nível ${nivel}"
+        }
 
-        var log = request.taverna(Id,item)
 
-        return log
+    }
+
+    suspend fun batalha(opcao: Int): BatalhaDTO {
+        var Id = -1
+        try {
+            Id = request.getPersonagem(email).id
+        }finally {
+            var Log = request.batalha(0,Id.toString(),opcao)
+
+            return Log
+        }
+
+
+    }
+    suspend fun batalhaChefe(opcao: Int): BatalhaDTO {
+        var Id: Int = -1
+        try {
+          Id = request.getPersonagem(email).id
+        }finally {
+            val Log = request.batalha(1,Id.toString(),opcao)
+
+            return Log
+        }
+    }
+
+    suspend fun taverna(item: String): Int {
+        var Id = -1
+        try {
+             Id = request.getPersonagem(email).id
+
+
+        }finally {
+            var log = request.taverna(Id.toString(),item)
+            return log
+
+        }
+
+
+
 
     }
 
     suspend fun trocaElm(elm: Int){
-        var Id = request.getID(email)
-        request.trocaelemento(Id, elm)
+        var Id =-1
+        try {
+           Id  = request.getPersonagem(email).id
+        }finally {
+            request.trocaelemento(Id.toString(), elm)
+        }
+
+
+    }
+
+    suspend fun deletar(){
+        request.deletar(email)
     }
 
 

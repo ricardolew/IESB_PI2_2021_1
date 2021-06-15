@@ -8,6 +8,7 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentPersonagemBinding
@@ -20,7 +21,7 @@ class PersonagemFragment : Fragment() {
 
     private lateinit var binding: FragmentPersonagemBinding
     private val viewmodel: RpgApiViewModel by viewModels()
-
+    val nome = MutableLiveData<String>()
 
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -33,14 +34,22 @@ class PersonagemFragment : Fragment() {
         binding.fragmentPersonagem = this
         binding.viewmodel=viewmodel
 
+        viewmodel.nomeuser()
+        viewmodel.niveluser()
+
         return binding.root
     }
+
 
 
     fun map(v:View){
         findNavController().navigate(R.id.action_personagemFragment_to_mapFragment)
 
     }
+
+//    fun taverna (log: String){
+//        Toast.makeText(context, log, Toast.LENGTH_LONG).show()
+//    }
 
     @SuppressWarnings
     fun PopUpLoja(v:View){
@@ -54,7 +63,7 @@ class PersonagemFragment : Fragment() {
             val item = it.title.toString()
             viewmodel.item = item
             viewmodel.taverna()
-            Toast.makeText(activity, "Item: " +it.title, Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "Você comprou o Item: " +it.title, Toast.LENGTH_SHORT).show()
             true
         }
         popup.show()
@@ -91,6 +100,14 @@ class PersonagemFragment : Fragment() {
         popup.show()
     }
 
+    fun deletar(){
+        viewmodel.deletar()
+        findNavController().popBackStack()
+    }
+
+    fun listarPersonagem(v: View){
+        findNavController().navigate(R.id.action_personagemFragment_to_itemFragment)
+    }
 
 
 }

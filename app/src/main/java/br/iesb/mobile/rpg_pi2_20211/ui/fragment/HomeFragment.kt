@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -13,11 +12,12 @@ import androidx.navigation.fragment.findNavController
 import br.iesb.mobile.rpg_pi2_20211.R
 import br.iesb.mobile.rpg_pi2_20211.databinding.FragmentHomeBinding
 import br.iesb.mobile.rpg_pi2_20211.ui.fragment.batalha.ConfirmacaoBatalhaChefeFragment
-import br.iesb.mobile.rpg_pi2_20211.ui.fragment.chatbot.ChatBotFragment
 import br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_criar_personagem_onboarding.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -36,6 +36,16 @@ class HomeFragment : Fragment() {
         binding.fragmentHome = this
 //        binding.viewmodel = viewmodel
 
+        viewmodel.resultUser.observe(viewLifecycleOwner){
+
+            if(it == 1) {
+                Toast.makeText(context,"Você já tem um jogador",Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_homeFragment_to_personagemFragment)
+            }else{
+                findNavController().navigate(R.id.action_homeFragment_to_criarPersonagemOnboarding)
+            }
+        }
+
         return binding.root
     }
 
@@ -51,9 +61,13 @@ class HomeFragment : Fragment() {
 //        findNavController().navigate(R.id.action_homeFragment_to_personagemFragment)
 //    }
 
-    fun criarPersonagem (v: View) {
-        findNavController().navigate(R.id.action_homeFragment_to_criarPersonagemOnboarding)
-    }
+   fun criarPersonagem (v: View) {
+        GlobalScope.launch {
+            viewmodel.getuser()
+        }
+        }
+
+
 
     fun chatBot(v:View){
         findNavController().navigate(R.id.action_homeFragment_to_chatBotFragment)

@@ -11,7 +11,9 @@
             name="viewmodel"
             type="br.iesb.mobile.rpg_pi2_20211.viewmodel.RpgApiViewModel" />
 
-
+        <variable
+            name="personagem"
+            type="br.iesb.mobile.rpg_pi2_20211.domain.Getnome" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,6 +29,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:text="Deletar"
+            android:onClick="@{() -> fragmentPersonagem.deletar()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -78,6 +81,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btCharInfos" />
 
+        <!--        <ImageView-->
+<!--            android:id="@+id/imageView2"-->
+<!--            android:layout_width="128dp"-->
+<!--            android:layout_height="128dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
+
         <TextView
             android:id="@+id/tvCharNivel"
             style="?titleStyle"
@@ -85,23 +99,13 @@
             android:layout_height="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:text="Nível X"
-            android:textSize="18sp"
+            android:text="@{viewmodel.userNivel}"
+            android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCharNome" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCharNome"
+            app:layout_constraintVertical_bias="0.298" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -115,15 +119,15 @@
             style="?titleStyle"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:text="Nome"
-            android:textSize="24sp"
+            android:layout_marginTop="64dp"
+            android:text="@{ viewmodel.userName }"
+            android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.188" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.18" />
 
         <Button
             android:id="@+id/btCharInfos"

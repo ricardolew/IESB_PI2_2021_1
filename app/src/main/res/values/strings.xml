@@ -64,6 +64,7 @@
 
     <!-- NOME APP -->
     <string name="nome">DALIBOR</string>
+    <string name="personagem">x</string>
 
 
     <string-array name="planets_array">
